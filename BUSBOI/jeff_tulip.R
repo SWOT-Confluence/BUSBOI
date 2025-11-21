@@ -1,5 +1,5 @@
 jeff_tulip=function(H_est,Hobs,nx,errortype,
-                   replacement_error){
+                   replacement_error,tulip){
     
     #squared error divided by variance of Hobs fit
     #we use this error as we've made our own heights
@@ -27,7 +27,7 @@ jeff_tulip=function(H_est,Hobs,nx,errortype,
 
 
     E2=basic_error^2
-    rel_E2 =  E2#/True_var 
+    rel_E2 =  E2/True_var 
     
     #when the non relative squared error is greater than the variance,
     #we want to penalize that
@@ -41,10 +41,12 @@ jeff_tulip=function(H_est,Hobs,nx,errortype,
     #now we have an error, take the RMSE
     objective= sqrt(mean(rel_E2,na.rm=TRUE))
     #this is in units of E/sigma
-    objective_m= objective#*sqrt(True_var)
 
-
-    # objective_m= sqrt(mean(E2,na.rm=TRUE))
+    if(tulip=='ON'){
+        objective_m= objective*sqrt(True_var)}
+    else{
+         objective_m= sqrt(mean(E2,na.rm=TRUE))
+        }
 
 
     return(objective_m)

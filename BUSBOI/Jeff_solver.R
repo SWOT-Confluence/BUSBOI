@@ -1,6 +1,6 @@
-jeff_solver=function(this_reach_id,priors,data,Q_priors,fix_bed,GVF_on){
+jeff_solver=function(this_reach_id,priors,data,Q_priors,fix_bed,GVF_on,tulip){
 
-
+  
     #set the hyperparams from the inputs
     hyperparams=list(
                     r=mean(priors$r_hat),
@@ -23,7 +23,7 @@ jeff_solver=function(this_reach_id,priors,data,Q_priors,fix_bed,GVF_on){
  
     #Zo is the elevation of a single point, since we want to 
     #reduce the number of things we're solving for
-    Zo_init=min(priors$Zo_hat)
+    Zo_init=mean(priors$Zo_hat)
 
     nt=hyperparams$nt
     # make a 'downstream' height vector that drops the Zo 
@@ -49,8 +49,8 @@ jeff_solver=function(this_reach_id,priors,data,Q_priors,fix_bed,GVF_on){
     lowerQ=rep(Q_priors$lowerbound_Q,times=nt) 
     upperQ=rep(Q_priors$upperbound_Q,times=nt)
     
-    upperZo=priors$lowerbound_Zo
-    lowerZo=priors$upperbound_Zo
+    upperZo=priors$upperbound_Zo
+    lowerZo=priors$lowerbound_Zo
 
     lower_r=priors$lowerbound_r
     upper_r=priors$upperbound_r
@@ -143,7 +143,8 @@ jeff_solver=function(this_reach_id,priors,data,Q_priors,fix_bed,GVF_on){
 #                     Sfpenalty=Sfpenalty,
 #                     GVF_on=GVF_on,
 #                     H_DS_init=H_DS_init,
-#                     fix_bed=fix_bed)
+#                     fix_bed=fix_bed,
+#                         tulip=tulip)
 
 #     bonk
 
@@ -165,25 +166,27 @@ jeff_solver=function(this_reach_id,priors,data,Q_priors,fix_bed,GVF_on){
                     Sfpenalty=Sfpenalty,
                     GVF_on=GVF_on,
                     H_DS_init=H_DS_init,
-                    fix_bed=fix_bed)
+                    fix_bed=fix_bed,
+                   tulip=tulip)
 
- print(optparams)
+#  print(optparams)
 
-### debugging toggle
-   jeff_calcHgivenparams(variables=optparams$par,
-                     hyperparams=hyperparams,
-                    plot_switch=1,
-                    this_reach_id=this_reach_id,
-                    obj_error=obj_error,
-                    replacement_error=replacement_error,
-                    smooth_sf=smooth_sf,
-                    Qpenalty=Qpenalty,
-                    Sfpenalty=Sfpenalty,
-                    GVF_on=GVF_on,
-                    H_DS_init=H_DS_init,
-                    fix_bed=fix_bed)
+# ### debugging toggle
+#    jeff_calcHgivenparams(variables=optparams$par,
+#                      hyperparams=hyperparams,
+#                     plot_switch=1,
+#                     this_reach_id=this_reach_id,
+#                     obj_error=obj_error,
+#                     replacement_error=replacement_error,
+#                     smooth_sf=smooth_sf,
+#                     Qpenalty=Qpenalty,
+#                     Sfpenalty=Sfpenalty,
+#                     GVF_on=GVF_on,
+#                     H_DS_init=H_DS_init,
+#                     fix_bed=fix_bed,
+#     tulip=tulip)
 
- bonk
+#  bonk
 
     #the par variable is of the form (r, Q, Zo). Dimensions vary with hyperparameters
       return(optparams$par)

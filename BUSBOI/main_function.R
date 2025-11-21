@@ -1,4 +1,4 @@
-main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_on,Q_prior){
+main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_on,Q_prior,tulip){
  
     suppressMessages({
     library(dplyr)
@@ -23,7 +23,7 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/rejection_sample.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/Jeff_solver.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/read_LSTM_ensemble.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/run_busboi.R')
+    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/run_BUSBOI.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/Slope_empirical.R')
 
     
@@ -105,29 +105,33 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
                    data=busboi_data_object$swot_data,
                    fix_bed=fix_bed,
                    GVF_on=GVF_on,
+                    tulip=tulip,
                    Q_priors=busboi_data_object$Qpriors)
 
         #format the output
         BUSBOI_df=data.frame(BUSBOI_Q=outputs$posterior_Q,
                       date=as.Date(busboi_data_object$swot_data$obs_times),
                       reach_id=this_reach_id,
-                      prior_Q=exp(busboi_data_object$Qpriors$logQ_hat))
+                      r=outputs$posterior_r,
+                      bed=paste(outputs$posterior_bed,sep=','),
+                      prior_Q=busboi_data_object$Qpriors$Q_hat)
 
         #toggle this saveRDS on for local work, otherwise use the 'output' function
-        saveRDS(neo_df,paste0(output_path,this_reach_id,'neoQ.rds'))
-        return(neo_df)
+        saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
+        bonk
+        return(BUSBOI_df)
 
     } else { #no data to run
 
     
-        neo_df=data.frame(busboi_Q=NA,
+        BUSBOI_df=data.frame(busboi_Q=NA,
                              date=NA,
                              reach_id=this_reach_id,
                              prior_Q=NA)
         #toggle this saveRDS on for local work, otherwise use the 'output' function
-        saveRDS(neo_df,paste0(output_path,this_reach_id,'neoQ.rds'))
+        saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
 
-     return(neo_df)
+     return(BUSBOI_df)
 
     } #end if statment checking for good input
 }#end main

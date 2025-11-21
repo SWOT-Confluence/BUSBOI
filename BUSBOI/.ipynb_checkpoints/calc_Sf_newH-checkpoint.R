@@ -63,20 +63,22 @@ calc_newH=function(height_in,chainage,num_nodes_to_invert){
     #calculate the error to the spline
     errors=new_H-y
 
-    #what happens if we take out >50cm errors and redo the spline?
+    #what happens if we take out >25cm errors?
     big_errors=which(errors>0.25)
-    x2=x
-    y2=y
-
-    y2[big_errors]=NA
+    y[big_errors]=NA
+    new_H[big_errors]=NA
 
     #there might be a bad fit
-    if(sum(!is.na(y2) )< num_nodes_to_invert) {
+    if(sum(!is.na(y) )< num_nodes_to_invert) {
        return(list('new_Hobs'=rep(-9999,num_nodes_to_invert),
                  'new_x'=rep(-9999,num_nodes_to_invert)))
         }
 
-
+    #recheck
+    final_errors=new_H-y
+    x2=x
+    y2=y
+    
     #2nd spline, error handled
     spline_outputs2<- tryCatch(
       {
@@ -106,7 +108,7 @@ calc_newH=function(height_in,chainage,num_nodes_to_invert){
     new_H2=new_H2[x_index2]
     y2=y2[x_index2]
     
-    final_error=new_H2-y2
+     final_errors=new_H2-y2
 
     ###toggle this on to check the plots
     # par(bg='white')
@@ -116,16 +118,16 @@ calc_newH=function(height_in,chainage,num_nodes_to_invert){
     # bonk
 
 
-   #get the overall error of the 2nd spline
-   second_rmse=sqrt(mean(final_error^2,na.rm=TRUE))
+   # #get the overall error of the 2nd spline
+  rmse=sqrt(mean(final_errors^2,na.rm=TRUE))
 
     #there might be a bad fit
-   if(is.na(second_rmse)){
+   if(is.na(rmse)){
        return(list('new_Hobs'=rep(-9999,num_nodes_to_invert),
                  'new_x'=rep(-9999,num_nodes_to_invert)))
         }
     
-    if(second_rmse>1){
+    if(rmse>1){
        return(list('new_Hobs'=rep(-9999,num_nodes_to_invert),
                  'new_x'=rep(-9999,num_nodes_to_invert)))
         }
@@ -133,8 +135,11 @@ calc_newH=function(height_in,chainage,num_nodes_to_invert){
     #finally, when height is flat with a ton of scatter, the spline makes a parabola
     #the RMSE of that parabola is quite low, so we don't catch it above
 
+    new_H=new_H2
+    new_x=new_x2
+
     #check the monotonicity
-    FFD= sign(c(0,new_H2)- c(new_H2,0))
+    FFD= sign(c(0,new_H)- c(new_H,0))
     percent_increase= sum(FFD==-1,na.rm=TRUE)/sum(!is.na(FFD))
 
         if(is.na(percent_increase)){
@@ -150,11 +155,11 @@ calc_newH=function(height_in,chainage,num_nodes_to_invert){
 
     ##important##---------
     #this little line of code caculates the new Sf of the final surface
-    Sobs=calc_newSf(new_H2,new_x2)$Sf
+    Sobs=calc_newSf(new_H,new_x)$Sf
     ###-------------------
 
-    return(list('new_Hobs'=new_H2,
-                 'new_x'=new_x2,
+    return(list('new_Hobs'=new_H,
+                 'new_x'=new_x,
                'Sobs'=Sobs))
     }
 

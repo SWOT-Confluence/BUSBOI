@@ -9,7 +9,8 @@ jeff_calcHgivenparams= function(variables,
                           Sfpenalty,
                           GVF_on,
                           H_DS_init,
-                          fix_bed){
+                          fix_bed,
+                               tulip){
     
 
     #height as fit to the obs
@@ -30,7 +31,7 @@ jeff_calcHgivenparams= function(variables,
     #control parameters
     nx=nrow(Hobs)
     nt=ncol(Hobs)
-    
+
     #from the solver parameters:
         #r
             r=variables[1]
@@ -195,7 +196,8 @@ jeff_calcHgivenparams= function(variables,
                            Hobs=Hobs,
                            nx=nx,
                            errortype=obj_error,
-                           replacement_error=replacement_error)
+                           replacement_error=replacement_error,
+                           tulip=tulip)
 
 
     #joint error
