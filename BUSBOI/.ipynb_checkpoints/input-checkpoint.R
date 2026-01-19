@@ -7,12 +7,16 @@ get_input=function(swot_file,sos_file,reach_id_in){
     fitted_hydraulics= fit_hydraulics(swot_file,sos_file,reach_id_in)
     #if there is no fit, then the result will be a character string
     #catch that and return nothing
+
+       print(fitted_hydraulics)
+    bonk
     if(typeof(fitted_hydraulics)=='character'){
             valid=FALSE
             return(list('reach_id'=reach_id_in,'swot_data'=NA, 'priors'= NA,'Qpriors'=NA,'valid'=valid))
     }
 
 
+ 
     #rejection sample the priors on those fitted hydraulics
     #given
         #Hobs, Wobs, and Sobs
@@ -42,8 +46,13 @@ get_input=function(swot_file,sos_file,reach_id_in){
         Wb_hat= priors$wb,
         Db_hat= priors$db,
 
+        # #toggle this to set to the big range of viable bed elevations
+        # lowerbound_Zo= min(priors$Zo_min),
+        # upperbound_Zo= max(priors$Zo_max),
+        #toggle this to limit to the range of teh means
         lowerbound_Zo= min(priors$Zo),
         upperbound_Zo= max(priors$Zo),
+        
         Zo_hat= priors$Zo,
         Zo_sd= priors$Zosd,
     
@@ -69,6 +78,8 @@ get_input=function(swot_file,sos_file,reach_id_in){
     Hobs=fitted_hydraulics$Hobs
     Zo_max=prior_list$upperbound_Zo
     Hobsdif=min(Hobs,na.rm=TRUE)-Zo_max
+
+ 
 
     if(Hobsdif<0){
         #drop the zo do that it is deep enough

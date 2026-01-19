@@ -23,7 +23,6 @@ run_BUSBOI = function(reach_id,priors, data,Q_priors, fix_bed,GVF_on,tulip) {
     #send the output back to main
     output=list('posterior_Q'= hydrograph_posterior,
             'posterior_Q_sd'= hydrograph_posterior_sd,
-            'posteriors'=posteriors,
                'posterior_r'=posterior_r,
                 'posterior_bed'=posterior_bed)
 

@@ -192,6 +192,8 @@ jeff_calcHgivenparams= function(variables,
        } #end GVF ON------------------------------------------
 
     #caculalte the error of the objective function
+
+     
         H_tulip=jeff_tulip(H_est=H_est,
                            Hobs=Hobs,
                            nx=nx,
@@ -200,12 +202,25 @@ jeff_calcHgivenparams= function(variables,
                            tulip=tulip)
 
 
+
     #joint error
     objective= Sfpenalty + Qpenalty + H_tulip #+ Sf_tulip +#= Sfpenalty 
 
+   
+       #iuf plot switch is 2, we return the bias
+    if (plot_switch ==2){
+
+    
+       return(mean(Hobs,na.rm=TRUE)-mean(H_est,na.rm=TRUE))
+           
+        }
 
     #this just makes plots so we can do science diagnosis
+ 
         if(plot_switch==1){
+
+         
+            
             plotlist=list()
             sequence=floor(seq(from=1,to=nt,length.out=15))
             count=0
@@ -229,6 +244,7 @@ jeff_calcHgivenparams= function(variables,
     
                
                 plotlist[[count]]=p1
+           
           }
             
            

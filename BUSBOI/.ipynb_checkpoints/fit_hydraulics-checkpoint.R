@@ -198,6 +198,8 @@ fit_hydraulics=function(swot_file,sos_file,reach_id_in){
     #this will just garble later joins
     rownames(Hobs)=NULL
 
+    
+
     #these are our inputs
     return(list('Wobs'=Wobs,
                 'Sobs'=Sobs,

@@ -5,6 +5,7 @@ jeff_tulip=function(H_est,Hobs,nx,errortype,
     #we use this error as we've made our own heights
     # H_var=standard_error*sqrt(nx)
 
+
     #basic error
     if(errortype=='relative'){
         basic_error=100*((H_est-Hobs)/Hobs)

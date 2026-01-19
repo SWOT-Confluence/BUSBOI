@@ -14,6 +14,7 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/input.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/jeff_tulip.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/calcHgivenparams.R')
+    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/calcHgivenparams_fixedbed.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/GVF.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/calculate_cum_dist.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/calc_Sf_newH.R')
@@ -62,6 +63,7 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
                               sos_file=sos_file, 
                               reach_id_in=this_reach_id)
 
+
     #if we have something to run on 
     if(busboi_data_object$valid==TRUE){
 
@@ -77,7 +79,7 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
                 #sometimes there is none
                 if(typeof(ML_Qt)!='character'){
         
-            swot_dates=data.frame(date=as.Date(busboi_data_object$swot_data$obs_times))
+                swot_dates=data.frame(date=as.Date(busboi_data_object$swot_data$obs_times))
         
                 #left joining gives us a vector of exactly the right size
                 ML_prior=left_join(swot_dates,ML_Qt,by='date')
@@ -108,17 +110,19 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
                     tulip=tulip,
                    Q_priors=busboi_data_object$Qpriors)
 
+  
+
         #format the output
         BUSBOI_df=data.frame(BUSBOI_Q=outputs$posterior_Q,
                       date=as.Date(busboi_data_object$swot_data$obs_times),
                       reach_id=this_reach_id,
                       r=outputs$posterior_r,
-                      bed=paste(outputs$posterior_bed,sep=','),
+                      bed=paste(outputs$posterior_bed,collapse=','),
                       prior_Q=busboi_data_object$Qpriors$Q_hat)
 
         #toggle this saveRDS on for local work, otherwise use the 'output' function
         saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
-        bonk
+     
         return(BUSBOI_df)
 
     } else { #no data to run
@@ -127,7 +131,9 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
         BUSBOI_df=data.frame(busboi_Q=NA,
                              date=NA,
                              reach_id=this_reach_id,
-                             prior_Q=NA)
+                             prior_Q=NA,
+                             r=NA,
+                             bed=NA)
         #toggle this saveRDS on for local work, otherwise use the 'output' function
         saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
 

@@ -42,9 +42,12 @@ rejection_sample_single_node=function(seed,H,W){
         width_error=((mean(W,na.rm=TRUE)*0.3)^r)*(db/(wb^r))
         height_error=0.11
 
-        if(is.na(sd(Zo,na.rm=TRUE))){return(data.frame(r=NA,
+        if(is.na(sd(Zo,na.rm=TRUE))){
+            return(data.frame(r=NA,
                           db=NA,
                           wb=NA,
+                          Zo_min=NA,
+                          Zo_max=NA,
                           Zo=NA))}
 
         #what we want is for the variability in bottom elevation
@@ -56,16 +59,23 @@ rejection_sample_single_node=function(seed,H,W){
             return(data.frame(r=r,
                           db=db,
                           wb=wb,
+                          Zo_min=min(Zo,na.rm=TRUE),
+                          Zo_max=max(Zo,na.rm=TRUE),
                           Zo=mean(Zo,na.rm=TRUE)))
             # count=count+1
             # save[[count]]=list('r'=r,'db'=db,'wb'=wb,'Zo'=mean(Zo,na.rm=TRUE))
         }else{return(data.frame(r=NA,
                           db=NA,
                           wb=NA,
+                          Zo_min=NA,
+                          Zo_max=NA,
                           Zo=NA))}
+        
     }else{return(data.frame(r=NA,
                           db=NA,
                           wb=NA,
+                          Zo_min=NA,
+                          Zo_max=NA,
                           Zo=NA))}
 
 }
@@ -133,6 +143,9 @@ do_rejection_sampling=function(cleaned_data){
                   db=mean(db,na.rm=TRUE),
                   wb=mean(wb,na.rm=TRUE),
                   Zo=mean(Zo,na.rm=TRUE),
+
+                  Zo_min=min(Zo_min,na.rm=TRUE),
+                  Zo_max=max(Zo_max,na.rm=TRUE),
                  
                   n=n())
 
