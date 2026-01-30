@@ -19,8 +19,10 @@ rejection_sample_single_node=function(seed,H,W){
     db = db*m +b
     
     #wb won't go negative, but just in case
+    #suppress warnings 
+    suppressWarnings({
     wb=abs(rnorm(1, mean=max(W*1.2,na.rm=TRUE),sd=sd(W,na.rm=TRUE)))
-
+})
     #by definition:
     #max depth is strictly less than bankfull.   
 

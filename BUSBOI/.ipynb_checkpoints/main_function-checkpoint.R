@@ -38,12 +38,12 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
                      'af_sword_v16_SOS_priors.nc',
                      'as_sword_v16_SOS_priors.nc'))
 
-    swordpaths=c( '/nas/cee-water/cjgleason/data/SWORD/SWORDv16/netcdf/eu_sword_v16.nc',
-                  '/nas/cee-water/cjgleason/data/SWORD/SWORDv16/netcdf/na_sword_v16.nc',
-                  '/nas/cee-water/cjgleason/data/SWORD/SWORDv16/netcdf/sa_sword_v16.nc',
-                  '/nas/cee-water/cjgleason/data/SWORD/SWORDv16/netcdf/oc_sword_v16.nc',
-                  '/nas/cee-water/cjgleason/data/SWORD/SWORDv16/netcdf/af_sword_v16.nc',
-                  '/nas/cee-water/cjgleason/data/SWORD/SWORDv16/netcdf/as_sword_v16.nc')
+    swordpaths=c( '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/eu_sword_v16.nc',
+                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/na_sword_v16.nc',
+                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/sa_sword_v16.nc',
+                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/oc_sword_v16.nc',
+                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/af_sword_v16.nc',
+                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/as_sword_v16.nc')
 
     if(continent_code=='7'){sos_file=sos_files[2]}
     if(continent_code=='8'){sos_file=sos_files[2]}
