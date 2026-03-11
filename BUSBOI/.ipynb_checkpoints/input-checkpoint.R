@@ -6,10 +6,8 @@ get_input=function(swot_file,sos_file,reach_id_in){
     #this returns Hobs, Sobs, Wobs, nx, nt, xs ids, and the obs times
     fitted_hydraulics= fit_hydraulics(swot_file,sos_file,reach_id_in)
     #if there is no fit, then the result will be a character string
-    #catch that and return nothing
+    
 
-       print(fitted_hydraulics)
-    bonk
     if(typeof(fitted_hydraulics)=='character'){
             valid=FALSE
             return(list('reach_id'=reach_id_in,'swot_data'=NA, 'priors'= NA,'Qpriors'=NA,'valid'=valid))

@@ -39,7 +39,7 @@ get_Q_prior=function(sos_file,reach_id_in,times){
         if(is.na(maxQ)){maxQ=50*max(Q_hat_month)}
         if(is.na(Qsd)){Qsd=sd(Q_hat_month$Q_hat_month)}
         #if all the same, still NA
-        if(is.na(Qsd)){Qsd=min(Q)}
+        if(is.na(Qsd)){Qsd=minQ}
 
 
     #retun these 

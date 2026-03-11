@@ -15,6 +15,7 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/jeff_tulip.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/calcHgivenparams.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/calcHgivenparams_fixedbed.R')
+    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/calcHgivenparams_bedonly.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/GVF.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/calculate_cum_dist.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/calc_Sf_newH.R')
@@ -23,6 +24,7 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/get_Q_prior.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/rejection_sample.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/Jeff_solver.R')
+    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/Jeff_solver_bedthenQ.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/read_LSTM_ensemble.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/run_BUSBOI.R')
     source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/Slope_empirical.R')
@@ -31,19 +33,19 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
     swot_file=paste0(swot_base,this_reach_id,'_SWOT.nc')
     continent_code=substr(this_reach_id,1,1)
     sos_files=paste0(sos_base,
-                     c('eu_sword_v16_SOS_priors.nc',
-                     'na_sword_v16_SOS_priors.nc',
-                     'sa_sword_v16_SOS_priors.nc',
-                     'oc_sword_v16_SOS_priors.nc',
-                     'af_sword_v16_SOS_priors.nc',
-                     'as_sword_v16_SOS_priors.nc'))
+                     c('eu_sword_v17b_SOS_priors.nc',
+                     'na_sword_v17b_SOS_priors.nc',
+                     'sa_sword_v17b_SOS_priors.nc',
+                     'oc_sword_v17b_SOS_priors.nc',
+                     'af_sword_v17b_SOS_priors.nc',
+                     'as_sword_v17b_SOS_priors.nc'))
 
-    swordpaths=c( '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/eu_sword_v16.nc',
-                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/na_sword_v16.nc',
-                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/sa_sword_v16.nc',
-                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/oc_sword_v16.nc',
-                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/af_sword_v16.nc',
-                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/as_sword_v16.nc')
+    swordpaths=c( '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/eu_sword_v17b.nc',
+                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/na_sword_v17b.nc',
+                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/sa_sword_v17b.nc',
+                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/oc_sword_v17b.nc',
+                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/af_sword_v17b.nc',
+                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/as_sword_v17b.nc')
 
     if(continent_code=='7'){sos_file=sos_files[2]}
     if(continent_code=='8'){sos_file=sos_files[2]}
@@ -52,6 +54,8 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
     if(continent_code=='9'){sos_file=sos_files[2]}
     if(continent_code=='6'){sos_file=sos_files[3]}
     if(continent_code=='5'){sos_file=sos_files[4]}
+    if(continent_code=='4'){sos_file=sos_files[6]}
+    if(continent_code=='3'){sos_file=sos_files[6]}
 
 
     #fit hydraulics
@@ -76,13 +80,35 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
           
                 #get daily Q
                ML_Qt= read_LSTM_ensemble(this_reach_id)
+            
                 #sometimes there is none
                 if(typeof(ML_Qt)!='character'){
+
+                    ML_Qt=ML_Qt%>%
+                        distinct()
         
                 swot_dates=data.frame(date=as.Date(busboi_data_object$swot_data$obs_times))
+
+                  
+
+                # print(as.data.frame(ML_Qt))
+                # print(as.data.frame(swot_dates))
+                # print('# of SWOT dates')
+                #     print(nrow(swot_dates))
+
+                #     print('number of ML Q straight from read LSTM ensemble')
+                #     print(nrow(ML_Qt))
         
                 #left joining gives us a vector of exactly the right size
                 ML_prior=left_join(swot_dates,ML_Qt,by='date')
+
+
+                # print('after joining, data frame length')
+                #     print(nrow(ML_prior))
+
+                # print('ml_Qt')
+                # print(ML_Qt)
+                #     bnonk
         
                 ML_Qhat= ML_prior$ML_ensemble
                 #replace NA
@@ -95,7 +121,8 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
                     busboi_data_object$Qpriors$Q_sd=rep(Qsd,times=length(ML_Qhat))
                     busboi_data_object$Qpriors$lowerbound_Q=minQ
                     busboi_data_object$Qpriors$upperbound_Q=maxQ
-        
+
+
                   }#end if there is no q prior
         
                 }
@@ -122,6 +149,8 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
 
         #toggle this saveRDS on for local work, otherwise use the 'output' function
         saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
+        
+      
      
         return(BUSBOI_df)
 
@@ -141,5 +170,3 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
 
     } #end if statment checking for good input
 }#end main
-
-

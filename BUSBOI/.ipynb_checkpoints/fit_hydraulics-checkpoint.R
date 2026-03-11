@@ -26,6 +26,7 @@ fit_hydraulics=function(swot_file,sos_file,reach_id_in){
     nt = length(swot_data$nt)
   # get nx
     nx = length(swot_data$nx)
+  
     
   # node data are nt by nx
     node_wse=data.frame(matrix(swot_data$node$wse,nrow=nt,ncol=nx))
@@ -55,7 +56,11 @@ fit_hydraulics=function(swot_file,sos_file,reach_id_in){
          pivot_wider(names_from=time,values_from=node_width,values_fn=first)
 
   # get the chainage here, use the node ids in this order
+
+   
+    
     station_df=calculate_cum_dist(sos,xs_ids)
+if(typeof(station_df)=='character'){return('no good')}
     chainage=station_df$stationvec
 
   # need to reorder the Hobs and Wobs matrices to match the chainage

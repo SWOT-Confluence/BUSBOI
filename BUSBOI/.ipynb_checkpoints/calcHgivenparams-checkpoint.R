@@ -201,12 +201,24 @@ jeff_calcHgivenparams= function(variables,
                            replacement_error=replacement_error,
                            tulip=tulip)
 
+    #penalize bias 
+    mean_logQ_est=mean(log(Q_est),na.rm=TRUE)
 
+    #from the original
+    prior_mean_log_Q=hyperparams$logML_mean
+
+    Q_tulip= jeff_tulip(H_est=mean_logQ_est,
+                           Hobs=prior_mean_log_Q,
+                           nx=nx,
+                           errortype=obj_error,
+                           replacement_error=replacement_error,
+                           tulip=tulip)
+
+    
 
     #joint error
-    objective= Sfpenalty + Qpenalty + H_tulip #+ Sf_tulip +#= Sfpenalty 
-
-   
+    objective= H_tulip +Q_tulip  #+ Sf_tulip 
+    # objective= - objective
        #iuf plot switch is 2, we return the bias
     if (plot_switch ==2){
 

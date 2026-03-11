@@ -142,10 +142,11 @@ jeff_solver=function(this_reach_id,priors,data,Q_priors,fix_bed,GVF_on,tulip){
         pars=c(hyperparams$r,Q_init)}
     #load optimizer, and run
 
-
+    MLbias=mean(log(Q_init),na.rm=TRUE)
     #more hyperparams
+        hyperparams$logML_mean=MLbias
         plot_switch=0
-        obj_error='absolute'
+        obj_error='relative'
         replacement_error=15 #units of type of obj. error
         smooth_sf=1 # set to 1, for sure. takes the mean Sf
         Qpenalty=0 # penalize adverse bed slopes, units of obj. error
@@ -153,7 +154,7 @@ jeff_solver=function(this_reach_id,priors,data,Q_priors,fix_bed,GVF_on,tulip){
         GVF_on=GVF_on # set to 1 to force a full-froude GVF
         H_DS_init='free' # set to'fixed' to always use the most ds swot obs
 
-# # debugging toggle
+# # debugging toggle to visualize initial bed.
 #    jeff_calcHgivenparams(variables=pars,
 #                      hyperparams=hyperparams,
 #                     plot_switch=1,
@@ -171,6 +172,27 @@ jeff_solver=function(this_reach_id,priors,data,Q_priors,fix_bed,GVF_on,tulip){
 #         bonk
     
     #solve
+
+    # library(GA)
+    # optsolution=ga(type = "real-valued", fitness = jeff_calcHgivenparams, lower = lower,
+    #                upper = upper,monitor=FALSE, maxiter=1000,run=100,pmutation=0.2,
+    #                suggestions=pars,
+
+    #                    hyperparams=hyperparams,
+    #                 plot_switch=plot_switch,
+    #                 this_reach_id=this_reach_id,
+    #                 obj_error=obj_error,
+    #                 replacement_error=replacement_error,
+    #                 smooth_sf=smooth_sf,
+    #                 Qpenalty=Qpenalty,
+    #                 Sfpenalty=Sfpenalty,
+    #                 GVF_on=GVF_on,
+    #                 H_DS_init=H_DS_init,
+    #                 fix_bed=fix_bed,
+    #                tulip=tulip)
+
+
+    
     optparams=optim(par=pars, fn=jeff_calcHgivenparams,
                       method='L-BFGS-B',
                       lower=lower, 
@@ -189,103 +211,63 @@ jeff_solver=function(this_reach_id,priors,data,Q_priors,fix_bed,GVF_on,tulip){
                     fix_bed=fix_bed,
                    tulip=tulip)
 
-
-   #  ##debugging toggle
-   # jeff_calcHgivenparams(variables=optparams$par,
-   #                   hyperparams=hyperparams,
-   #                  plot_switch=1,
-   #                  this_reach_id=this_reach_id,
-   #                  obj_error=obj_error,
-   #                  replacement_error=replacement_error,
-   #                  smooth_sf=smooth_sf,
-   #                  Qpenalty=Qpenalty,
-   #                  Sfpenalty=Sfpenalty,
-   #                  GVF_on=GVF_on,
-   #                  H_DS_init=H_DS_init,
-   #                  fix_bed=fix_bed,
-   #                      tulip=tulip)
-
-   #      bonk
-
-# print('initial Q')
-# print(Q_init)
-# print('final Q')
-final_Q=optparams$par[2:(nt+1)]
-# print(optparams$par[2:(nt+1)])
-
-
-Q_difference= sqrt(mean(((Q_init-final_Q)/Q_init)^2))
-
+    # print(optsolution)
     # print(optparams)
+    # browser()
 
-    #we don't want to keep the prior if we can help it
-    if (Q_difference < 0.05){
-      
-        #first, check convergence
-        convergence_code=optparams$convergence
-        #value of 52 indicates no solution
-        # if (convergence_code == 52) {
-
-        # #now, we need to know the direction.
-        #  #set plot switch to 2 to calculate height bias
-        height_bias=jeff_calcHgivenparams(variables=pars,
-                     hyperparams=hyperparams,
-                    #set to 2 to calculate height bias
-                    plot_switch=2,
-                    this_reach_id=this_reach_id,
-                    obj_error=obj_error,
-                    replacement_error=replacement_error,
-                    smooth_sf=smooth_sf,
-                    Qpenalty=Qpenalty,
-                    Sfpenalty=Sfpenalty,
-                    GVF_on=GVF_on,
-                    H_DS_init=H_DS_init,
-                    fix_bed=fix_bed,
-                    tulip=tulip)
-        # #This height bias is obs-est, so postiive means the estiamted surface is under SWOT and we need to make the channel shalloweer
-        # #negative means the surface is over swot and we need to make the channel deeper
+#  ##debugging toggle
+# jeff_calcHgivenparams(variables=optparams$par,
+#                   hyperparams=hyperparams,
+#                  plot_switch=1,
+#                  this_reach_id=this_reach_id,
+#                  obj_error=obj_error,
+#                  replacement_error=replacement_error,
+#                  smooth_sf=smooth_sf,
+#                  Qpenalty=Qpenalty,
+#                  Sfpenalty=Sfpenalty,
+#                  GVF_on=GVF_on,
+#                  H_DS_init=H_DS_init,
+#                  fix_bed=fix_bed,
+#                      tulip=tulip)
+# 
+# browser()
+#      bonk
 
 
+    #OK!!! following meeting with Kostas on 2/27, let's do a two step solution. So we just optimized a bed and Q
+    #that minimizes errors in water levels. However, if you look at the surfces, it is clear that the Q could be refined
+    #to better move the surfaces. so, we need to optimize again, this time AT EACH TIME INDPENDENTLY, given the bed
+    #we just solved in the global setup.
+    
+
+    #the bed is the final set of bed points
+    global_bed=optparams$par[(nt+2):(length(optparams$par))]
+
+    #r is the first parameter
+    global_r=optparams$par[1]
+
+    #Q is the the rest
+    global_Q=optparams$par[2:(nt+1)]
+
+    #we need to optimize for one time, so we need a new function that fixes the bed. the pars of this are just Q
+    Qmin= Q_priors$lowerbound_Q
+    Qmax= Q_priors$upperbound_Q
+    
+    optimize_one_Q=function( Q_initial,index, Qmin,Qmax, global_r,global_bed,hyperparams,plot_switch,this_reach_id,obj_error,
+                            replacement_error,smooth_sf,Qpenalty, Sfpenalty,GVF_on,H_DS_init,fix_bed,tulip){
         
-       pars_bed_new= pars_bed + height_bias
-       upper_bed_new= upper_bed +height_bias
-       lower_bed_new= lower_bed +height_bias
-
-        #redefine bounds
-       pars=c(hyperparams$r, Q_init)
-       lower=c(r_min,0.6*lowerQ)
-       upper=c(upper_r+mean(priors$r_sd), 1.4*upperQ)
-
-        # #keep the shape from before, so force Q to change
-        
-        hyperparams$sample_Zo=pars_bed_new
-
-
-# # debugging toggle
-#    jeff_calcHgivenparams_fixedbed(variables=pars,
-#                      hyperparams=hyperparams,
-#                     plot_switch=1,
-#                     this_reach_id=this_reach_id,
-#                     obj_error=obj_error,
-#                     replacement_error=replacement_error,
-#                     smooth_sf=smooth_sf,
-#                     Qpenalty=Qpenalty,
-#                     Sfpenalty=Sfpenalty,
-#                     GVF_on=GVF_on,
-#                     H_DS_init=H_DS_init,
-#                     fix_bed=fix_bed,
-#                         tulip=tulip)
-
-#         bonk
-
-                #solve new fixed bed function
-optparams=optim(par=pars, fn=jeff_calcHgivenparams_fixedbed,
+ 
+    
+     opt_single_Q=optim(par=Q_initial, fn=jeff_calcHgivenparams_fixedbed,
+                        index=index,
                       method='L-BFGS-B',
-                      lower=lower, 
-                      upper=upper,
+                      lower=Qmin, 
+                      upper=Qmax,
                     #solver params from top level function
+                     global_r=global_r,
+                     global_bed=global_bed,
                      hyperparams=hyperparams,
-                    plot_switch=0,
+                    plot_switch=plot_switch,
                     this_reach_id=this_reach_id,
                     obj_error=obj_error,
                     replacement_error=replacement_error,
@@ -297,35 +279,44 @@ optparams=optim(par=pars, fn=jeff_calcHgivenparams_fixedbed,
                     fix_bed=fix_bed,
                    tulip=tulip)
 
-# # debugging toggle
-#    jeff_calcHgivenparams_fixedbed(variables=optparams$par,
-#                      hyperparams=hyperparams,
-#                     plot_switch=1,
-#                     this_reach_id=this_reach_id,
-#                     obj_error=obj_error,
-#                     replacement_error=replacement_error,
-#                     smooth_sf=smooth_sf,
-#                     Qpenalty=Qpenalty,
-#                     Sfpenalty=Sfpenalty,
-#                     GVF_on=GVF_on,
-#                     H_DS_init=H_DS_init,
-#                     fix_bed=fix_bed,
-#                         tulip=tulip)
+        return(opt_single_Q$par)
+        } #end single function
 
-
-        #add the bed back to the par
-        optparams$par=c(optparams$par,pars_bed_new)
-     
-        
-            # } #52 code if statement
-
-        }
+    #loop over the Q values
     
 
+    allQ=rep(NA,times=length(global_Q))
+for (i in 1:length(global_Q)){
+  
+  
+  allQ[i]=optimize_one_Q(Q_initial=global_Q[i],
+                    index=i,      
+                     Qmin=Qmin,
+                     Qmax=Qmax,
+                     global_r=global_r,
+                     global_bed=global_bed,
+                     hyperparams=hyperparams,
+                     plot_switch=plot_switch,
+                     this_reach_id=this_reach_id,
+                     obj_error=obj_error,
+                     replacement_error=replacement_error,
+                     smooth_sf=smooth_sf,
+                     Qpenalty=Qpenalty,
+                     Sfpenalty=Sfpenalty,
+                     GVF_on=GVF_on,
+                     H_DS_init=H_DS_init,
+                     fix_bed=fix_bed,
+                     tulip=tulip)
+  
+  
+}
+   
+
+    
+    final_pars=c(global_r,allQ,global_bed)
 
     #the par variable is of the form (r, Q, Zo). Dimensions vary with hyperparameters
-      return(optparams$par)
+    # return(optsolution@solution) 
+    return(final_pars)
     
     }
-
-

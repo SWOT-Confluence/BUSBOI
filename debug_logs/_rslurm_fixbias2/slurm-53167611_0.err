@@ -1,0 +1,1924 @@
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Attaching package: ‘zoo’
+
+The following objects are masked from ‘package:base’:
+
+    as.Date, as.Date.numeric
+
+Error in FUN(X[[i]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[i]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[i]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[i]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[i]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[i]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[i]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[i]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[i]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[i]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[i]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[i]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[i]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[i]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[i]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[i]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+There were 50 or more warnings (use warnings() to see the first 50)
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Error in FUN(X[[nexti]], ...) : object '.rslurm_result' not found
+Calls: do.call ... tryCatchOne -> doTryCatch -> eval -> FUN -> saveRDS
+Warning message:
+In (function (X, FUN, ..., mc.preschedule = TRUE, mc.set.seed = TRUE,  :
+  18 function calls resulted in an error

@@ -8,8 +8,15 @@ calculate_cum_dist=function(sos,node_ids){
         x=sos$nodes$x[node_index]
         y=sos$nodes$y[node_index]
         sword_id=sos$nodes$node_id[node_index]
-    
 
+
+  
+#some node issues on 17b
+    if(length(x)==0){
+
+        return('no nodes')
+    }
+   
 
 distance=rep(0,times=(length(x)-1))
     

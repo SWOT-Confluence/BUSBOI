@@ -64,9 +64,10 @@ calculate_spline=function(chainage,height_in){
         x2=x[not_na_y]
         y2=y[not_na_y]
 
-    #now we have a limited set of x and y data that form a surface to fit
-    #that are continous in having data at every element 
-    
+    # now we have a limited set of x and y data that form a surface to fit
+    # that are continous in having data at every element 
+
+
     #if we fit this surface, it should be smooth.
     spline=smooth.spline(x=x2, y = y2,spar=0.95)
     spline_x=spline$x
@@ -90,7 +91,19 @@ calculate_spline=function(chainage,height_in){
 
     }
 
- 
+   #   if (length(na_y)>0){
+   #      x2=x[not_na_y]
+   #      y2=y[not_na_y]
+   #  }else{
+   #      x2=x
+   #      y2=y
+   #       }
+    
+   # fit <- smooth.spline(x2, y2,spar=0.95)
+   # pred <- predict(fit, x = x) 
+
+   #  new_x=pred$x
+   #  new_H=pred$y
 
     #force a sort.
      sorted_x=sort(new_x,index.return=TRUE)

@@ -1,6 +1,9 @@
 #function to run the optimization on Q only
 
 jeff_calcHgivenparams_fixedbed= function(variables,
+                                         index,
+                                         global_r,
+                                         global_bed,
                            hyperparams,
                            plot_switch,
                            this_reach_id,
@@ -19,6 +22,8 @@ jeff_calcHgivenparams_fixedbed= function(variables,
 
     #height as fit to the obs
     Hobs=hyperparams$Hobs #nx by nt
+
+   
     
     #only for plotting purposes
     OGheight=hyperparams$OGheight
@@ -37,36 +42,30 @@ jeff_calcHgivenparams_fixedbed= function(variables,
     nt=ncol(Hobs)
 
     #from the solver parameters:
-        #r
-            r=variables[1]
-        #Q 
-            Q_est=variables[2:(nt+1)] #nt
-    
-    #from hyperparams
-        #bed
-    sample_Zo=hyperparams$sample_Zo
-      sample_x=hyperparams$sample_x
+    Q_est=variables
 
-      Zo_ds=approx(sample_x,sample_Zo ,xout=new_x ,method = "linear")$y
+    #from the global soluution r
+    r=global_r
+    
+    #from global solution 5 points for bed
+    sample_Zo=global_bed
+    #from hyperparams as before
+    sample_x=hyperparams$sample_x
+    
+   
+
+    Zo_ds=approx(sample_x,sample_Zo ,xout=new_x ,method = "linear")$y
      
     #define Sf for each time from the observations
     #FFD- this is an instantaneoulsy changing slope in space
     #smoothing it to average Sf is a hyperparameter, we will handle later
-    Sf=apply(Hobs,2,Slope_empirical,chainage=new_x)
-      #this comes out as one element shorter than the original one
-       #handle zeroes
-    Sf[Sf==0]=1e-6
-
-    #smooth that Sf
-    if(smooth_sf==1){
-        Sf_smooth=mean(Sf,na.rm=TRUE)
-        }
-    else{
-        Sf_smooth=Sf
-    }
-
-    #excepton handle
-    Sf_smooth[Sf_smooth=='NaN']=NA
+    Sf=Slope_empirical(Hobs[,index],chainage=new_x)
+    #take a mean SF for the whole timestep
+    Sf_smooth=mean(Sf,na.rm=TRUE)
+    
+   
+   
+  
 
     #set an adverse slope penalty
     #usually 0, but capability is here
@@ -74,9 +73,6 @@ jeff_calcHgivenparams_fixedbed= function(variables,
          Sf_smooth[Sf_smooth<0]=1e-6
          Sfpenalty=Sfpenalty
      }
-    
-
-
     
     #define So from the bed
     #since this is piecewise lienar, the slope is well behaved
@@ -91,8 +87,12 @@ jeff_calcHgivenparams_fixedbed= function(variables,
 
     #we need an H estimate that is a function of Q, otherwise we can fit too well if we use Hobs as DS boundary
     #simply solve the flow law given Q
-        Zo_mat=matrix(rep(Zo_ds,times=nt),nrow=nx,ncol=nt)
-        Q_mat=matrix(rep(Q_est,times=nx),nrow=nx,ncol=nt,byrow=TRUE)
+
+    #vector, not matrix, for space only problem
+    
+ 
+        Zo_mat=Zo_ds
+        Q_mat=rep(Q_est,times=nx)
     
         exponent=1/(1.66+(1/r))
         a=Q_mat
@@ -135,62 +135,39 @@ jeff_calcHgivenparams_fixedbed= function(variables,
             paramsODE$n=n
             paramsODE$wb=wb
             paramsODE$db=db
-            paramsODE$r=r
             paramsODE$So=So
             #loop over all the columns to solve at each time t with the same bed and that times
             #qestimate
             solved_ode=list()
         
-            for(i in 1:nt){
+
                 stations = new_x #chainage for the other heights  
                 paramsODE$timeindex=i
                 paramsODE$all_stations=new_x
                 paramsODE$Q_est=Q_est
                 paramsODE$Zo_ds=Zo_ds
 
-               if(H_DS_init=='fixed'){
-                     H_init=Hobs[1,i]
+            #free fit, use the Q-estimated height
+                    H_init=H_est[1,i]
+                
 
-                   #sometimes there are no data on the downstream most
-                   #node...
-                     if (is.na(H_init)){
-                        first_H_index=first(which(!is.na(Hobs[,i])))
-                         H_init=Hobs[first_H_index,i]
-                         stations=stations[first_H_index:nrow(Hobs)]
-                         }
-                }else{ #free fit, use the Q-estimated height
-                     H_init=H_est[1,i]
-                }
-
-                solved_ode[[i]]= ode(y=H_init, times=stations, func=GVF,
+                solved_ode= ode(y=H_init, times=stations, func=GVF,
                                      parms=paramsODE,method='ode45')  
 
-                # where the first column is labelled 'time' but is really station
-                # the second coumn is water surface elevation
-         
-
-            }#end time loop
-       # -----------------------------------    
-
-        #since these are different numbers of stations in the 'fixed' case, we need a for loop
-        #which i hate,but is best here
-
-         H_temp=data.frame(station=solved_ode[[1]][,1],height=solved_ode[[1]][,2])
-        
-        for(i in 2:length(solved_ode)){
-            tempdf=data.frame(station=solved_ode[[i]][,1],height=solved_ode[[i]][,2])
-            H_temp=full_join(H_temp,tempdf,by='station')
-            }
-        #the names of this dataframe are not meaningful, nor is the first column (station) which is just there
-        #to ensure the correct alignments
+             # where the first column is labelled 'time' but is really station
+            # the second coumn is water surface elevation
+ 
         H_est=unname(as.matrix(H_temp[,2:ncol(H_temp)]))
        } #end GVF ON------------------------------------------
 
     #caculalte the error of the objective function
 
+   
+  
      
         H_tulip=jeff_tulip(H_est=H_est,
-                           Hobs=Hobs,
+                           #need only this time
+                           Hobs=Hobs[,index],
                            nx=nx,
                            errortype=obj_error,
                            replacement_error=replacement_error,
@@ -201,6 +178,8 @@ jeff_calcHgivenparams_fixedbed= function(variables,
     #joint error
     objective= Sfpenalty + Qpenalty + H_tulip #+ Sf_tulip +#= Sfpenalty 
 
+
+  
     #if plot switch is 2, we return the bias
     if (plot_switch ==2){
 
@@ -213,14 +192,8 @@ jeff_calcHgivenparams_fixedbed= function(variables,
 
          
             
-            plotlist=list()
-            sequence=floor(seq(from=1,to=nt,length.out=15))
-            count=0
-            for (index in sequence){
-                count=count+1
-    
-                         
-                plotter=data.frame(SWOT=Hobs[,index],Estimated=H_est[,index],
+ 
+                plotter=data.frame(SWOT=Hobs[,index],Estimated=H_est,
                                    Zo_ds=Zo_ds,new_x=new_x)%>%
                     gather(source,height,-new_x)
                         
@@ -236,11 +209,11 @@ jeff_calcHgivenparams_fixedbed= function(variables,
     
     
                
-                plotlist[[count]]=p1
-          }
-            
+    
+  
            
-              print(plotlist)
+              print(p1)
+            
             bonk #will kill the code!
     
             } #end plotswitch
