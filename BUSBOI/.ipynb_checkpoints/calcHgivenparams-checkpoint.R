@@ -218,6 +218,7 @@ jeff_calcHgivenparams= function(variables,
 
     #joint error
     objective= H_tulip +Q_tulip  #+ Sf_tulip 
+
     # objective= - objective
        #iuf plot switch is 2, we return the bias
     if (plot_switch ==2){
@@ -255,13 +256,12 @@ jeff_calcHgivenparams= function(variables,
     
     
                
-                plotlist[[count]]=p1
+                plotlist[[count]]=plotter
            
           }
             
+           return(plotlist)
            
-              print(plotlist)
-            bonk #will kill the code!
     
             } #end plotswitch
 

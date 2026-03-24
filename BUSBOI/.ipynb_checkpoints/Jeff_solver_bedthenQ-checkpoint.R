@@ -157,21 +157,24 @@ jeff_solver_bedthenQ=function(this_reach_id,priors,data,Q_priors,fix_bed,GVF_on,
         H_DS_init='free' # set to'fixed' to always use the most ds swot obs
 
 # debugging toggle to visualize initial bed.
- plot_initial_channel= jeff_calcHgivenparams_bedonly(variables=pars,
-                     hyperparams=hyperparams,
-                    plot_switch=1,
-                    this_reach_id=this_reach_id,
-                    obj_error=obj_error,
-                    replacement_error=replacement_error,
-                    smooth_sf=smooth_sf,
-                    Qpenalty=Qpenalty,
-                    Sfpenalty=Sfpenalty,
-                    GVF_on=GVF_on,
-                    H_DS_init=H_DS_init,
-                    fix_bed=fix_bed,
-                        tulip=tulip)
+ # plot_initial_channel= jeff_calcHgivenparams_bedonly(variables=pars,
+ #                     hyperparams=hyperparams,
+ #                    plot_switch=1,
+ #                    this_reach_id=this_reach_id,
+ #                    obj_error=obj_error,
+ #                    replacement_error=replacement_error,
+ #                    smooth_sf=smooth_sf,
+ #                    Qpenalty=Qpenalty,
+ #                    Sfpenalty=Sfpenalty,
+ #                    GVF_on=GVF_on,
+ #                    H_DS_init=H_DS_init,
+ #                    fix_bed=fix_bed,
+ #                        tulip=tulip)
 
-        bonk
+ #    saveRDS(plot_initial_channel,paste0('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/channel_examples/',
+ #                                        this_reach_id,'initial_channel.rds'))
+
+ #        bonk
     
     #solve
 
@@ -303,23 +306,27 @@ for (i in 1:length(global_Q)){
     
     final_pars=c(global_r,allQ,global_bed)
 
-#      ##debugging toggle
-# jeff_calcHgivenparams(variables=final_pars,
-#                   hyperparams=hyperparams,
-#                  plot_switch=1,
-#                  this_reach_id=this_reach_id,
-#                  obj_error=obj_error,
-#                  replacement_error=replacement_error,
-#                  smooth_sf=smooth_sf,
-#                  Qpenalty=Qpenalty,
-#                  Sfpenalty=Sfpenalty,
-#                  GVF_on=GVF_on,
-#                  H_DS_init=H_DS_init,
-#                  fix_bed=fix_bed,
-#                      tulip=tulip)
+     ##debugging toggle
+plot_final_channel=jeff_calcHgivenparams(variables=final_pars,
+                  hyperparams=hyperparams,
+                 plot_switch=1,
+                 this_reach_id=this_reach_id,
+                 obj_error=obj_error,
+                 replacement_error=replacement_error,
+                 smooth_sf=smooth_sf,
+                 Qpenalty=Qpenalty,
+                 Sfpenalty=Sfpenalty,
+                 GVF_on=GVF_on,
+                 H_DS_init=H_DS_init,
+                 fix_bed=fix_bed,
+                     tulip=tulip)
+
+        saveRDS(plot_final_channel,paste0('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/channel_examples/',
+                                        this_reach_id,'final_channel.rds'))
+
+    
 
 
-#      bonk
 
     #the par variable is of the form (r, Q, Zo). Dimensions vary with hyperparameters
     # return(optsolution@solution) 

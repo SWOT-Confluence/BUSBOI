@@ -14,6 +14,11 @@ library(zoo, quietly = TRUE)
 library(hydroGOF, quietly = TRUE)
 library(rslurm, quietly = TRUE)
 library(whisker, quietly = TRUE)
+library(RNetCDF, quietly = TRUE)
+library(optimx, quietly = TRUE)
+library(deSolve, quietly = TRUE)
+library(purrr, quietly = TRUE)
+library(geosphere, quietly = TRUE)
 
 
 .rslurm_func <- readRDS('f.RDS')

@@ -256,13 +256,12 @@ jeff_calcHgivenparams= function(variables,
     
     
                
-                plotlist[[count]]=p1
+                plotlist[[count]]=plotter
            
           }
             
+           return(plotlist)
            
-              print(plotlist)
-            bonk #will kill the code!
     
             } #end plotswitch
 
