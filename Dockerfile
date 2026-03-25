@@ -1,8 +1,8 @@
 # Stage 0 - Create from rocker R image
-FROM rocker/r-ver:4.2.0 as stage0
+FROM rocker/r-ver:4.2.0 AS stage0
 
 # Stage 1 - Install system dependencies
-FROM stage0 as stage1
+FROM stage0 AS stage1
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get install -y \
     libnetcdf-dev \
@@ -21,7 +21,7 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Stage 2 - Install R packages and BUSBOI code
-FROM stage1 as stage2
+FROM stage1 AS stage2
 RUN R -e "install.packages(c( \
     'dplyr', \
     'tidyr', \
@@ -40,15 +40,15 @@ COPY ./README.md /app/BUSBOI/README.md
 WORKDIR /app/BUSBOI
 
 # Make driver executable
-RUN chmod +x /app/BUSBOI/BUSBOI/driver.R
+RUN chmod +x /app/BUSBOI/BUSBOI/drive_BUSBOI.R
 
 # Create mount point directories
 RUN mkdir -p /mnt/data/input /mnt/data/output
 
 # Stage 3 - Execute algorithm
-FROM stage2 as stage3
+FROM stage2 AS stage3
 LABEL version="1.0"
 LABEL description="BUSBOI v1.0 discharge algorithm."
 LABEL maintainer="SWOT-Confluence"
 ENV CONFLUENCE_US=1
-ENTRYPOINT ["/app/BUSBOI/BUSBOI/driver.R"]
+ENTRYPOINT ["/app/BUSBOI/BUSBOI/drive_BUSBOI.R"]
