@@ -6,7 +6,14 @@
 # ==============================================================================
 # BUSBOI ALGORITHM PARAMETERS
 # ==============================================================================
+# Check for required packages
+required_packages <- c("dplyr", "tidyr", "RNetCDF", "optimx", "ggplot2", "deSolve", "hydroGOF", "jsonlite", "optparse")
 
+for(pkg in required_packages) {
+    if(!require(pkg, character.only = TRUE, quietly = TRUE)) {
+        stop(paste0("Required package '", pkg, "' is not installed. Please install it with: install.packages('", pkg, "')"))
+    }
+}
 # Q Prior Type
 # Options: 'daily' or 'monthly'
 # 'daily' - Use daily machine learning discharge priors from LSTM ensemble

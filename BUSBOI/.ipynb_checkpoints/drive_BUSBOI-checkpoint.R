@@ -11,10 +11,25 @@ suppressMessages({
     library(ggplot2)
     library(deSolve)
     library(hydroGOF)
+    library(jsonlite)
+    library(optparse)
 })
 
+# Parse command line arguments
+option_list <- list(
+    make_option(c("-r", "--reachfile"), type="character", default="reaches.json",
+                help="Path to reaches JSON file [default %default]", metavar="character"),
+    make_option(c("-i", "--index"), type="integer", default=0,
+                help="Array index for reach to process [default %default]", metavar="integer")
+)
+
+opt_parser <- OptionParser(option_list=option_list)
+opt <- parse_args(opt_parser)
+
 # Get BUSBOI directory
-BUSBOI_DIR <- dirname(sys.frame(1)$ofile)
+args <- commandArgs(trailingOnly = FALSE)
+script_path <- sub("--file=", "", args[grep("--file=", args)])
+BUSBOI_DIR <- dirname(script_path)
 if(length(BUSBOI_DIR) == 0 || BUSBOI_DIR == "") {
     BUSBOI_DIR <- getwd()
 }
@@ -48,17 +63,22 @@ source(file.path(BUSBOI_DIR, 'Slope_empirical.R'))
 source(file.path(BUSBOI_DIR, 'main_function.R'))
 source(file.path(BUSBOI_DIR, 'write_output.R'))
 
-# Read reach_id from input (look for SWOT file)
-reach_files <- list.files(IN_DIR, pattern = paste0(SWOT_FILE_PATTERN, "$"), full.names = FALSE)
-
-if(length(reach_files) == 0) {
-    stop("No SWOT data file found in input directory")
+# Read reaches from JSON file
+reach_json_path <- file.path(IN_DIR, opt$reachfile)
+if(!file.exists(reach_json_path)) {
+    stop(paste0("Reaches file not found: ", reach_json_path))
 }
 
-# Extract reach_id from filename
-reach_id <- gsub(SWOT_FILE_PATTERN, "", reach_files[1])
+reaches <- fromJSON(reach_json_path)
 
-cat(paste0("Processing reach: ", reach_id, "\n"))
+# Get reach_id from index
+if(opt$index < 0 || opt$index >= length(reaches)) {
+    stop(paste0("Index ", opt$index, " out of bounds. Valid range: 0-", length(reaches)-1))
+}
+
+reach_id <- reaches[[opt$index + 1]]  # R is 1-indexed
+
+cat(paste0("Processing reach [", opt$index, "]: ", reach_id, "\n"))
 
 # Run BUSBOI with config parameters
 result <- main_function(
