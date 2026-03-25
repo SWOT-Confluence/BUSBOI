@@ -1,37 +1,15 @@
 main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_on,Q_prior,tulip){
  
-    suppressMessages({
-    library(dplyr)
-    library(tidyr)
-    library(RNetCDF)
-    library(optimx)
-    library(ggplot2)
-    library(deSolve)
-    library(hydroGOF)
-     })
-
-
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/input.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/jeff_tulip.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/calcHgivenparams.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/calcHgivenparams_fixedbed.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/calcHgivenparams_bedonly.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/GVF.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/calculate_cum_dist.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/calc_Sf_newH.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/calculate_spline.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/fit_hydraulics.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/get_Q_prior.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/rejection_sample.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/Jeff_solver.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/Jeff_solver_bedthenQ.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/read_LSTM_ensemble.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/run_BUSBOI.R')
-    source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/Slope_empirical.R')
-
+    # Source the output writer
+    source(file.path(dirname(sys.frame(1)$ofile), 'output.R'))
     
-    swot_file=paste0(swot_base,this_reach_id,'_SWOT.nc')
-    continent_code=substr(this_reach_id,1,1)
+  # Construct file paths from base directories
+    swot_file <- paste0(swot_base, this_reach_id, '_SWOT.nc')
+    
+    # Determine continent code from reach_id
+    continent_code <- substr(this_reach_id, 1, 1)
+    
+    # SOS files - now read from input directory
     sos_files=paste0(sos_base,
                      c('eu_sword_v17b_SOS_priors.nc',
                      'na_sword_v17b_SOS_priors.nc',
@@ -40,12 +18,14 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
                      'af_sword_v17b_SOS_priors.nc',
                      'as_sword_v17b_SOS_priors.nc'))
 
-    swordpaths=c( '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/eu_sword_v17b.nc',
-                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/na_sword_v17b.nc',
-                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/sa_sword_v17b.nc',
-                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/oc_sword_v17b.nc',
-                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/af_sword_v17b.nc',
-                  '/nas/cee-ice/data/SWORD/SWORDv16/netcdf/as_sword_v17b.nc')
+    # SWORD files - now read from input directory
+    swordpaths <- paste0(sword_base,
+                        c('eu_sword_v17b.nc',
+                          'na_sword_v17b.nc',
+                          'sa_sword_v17b.nc',
+                          'oc_sword_v17b.nc',
+                          'af_sword_v17b.nc',
+                          'as_sword_v17b.nc'))
 
     if(continent_code=='7'){sos_file=sos_files[2]}
     if(continent_code=='8'){sos_file=sos_files[2]}
@@ -67,7 +47,14 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
                               sos_file=sos_file, 
                               reach_id_in=this_reach_id)
 
-
+    # Prepare metadata for output
+    out_data <- list(
+        reach_id = this_reach_id,
+        node_ids = busboi_data_object$node_ids,  # Get from input if available
+        nt = seq(1, length(busboi_data_object$swot_data$obs_times)),
+        invalid_times = c()  # Track invalid times if needed
+    )
+    
     #if we have something to run on 
     if(busboi_data_object$valid==TRUE){
 
@@ -88,27 +75,9 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
                         distinct()
         
                 swot_dates=data.frame(date=as.Date(busboi_data_object$swot_data$obs_times))
-
-                  
-
-                # print(as.data.frame(ML_Qt))
-                # print(as.data.frame(swot_dates))
-                # print('# of SWOT dates')
-                #     print(nrow(swot_dates))
-
-                #     print('number of ML Q straight from read LSTM ensemble')
-                #     print(nrow(ML_Qt))
         
                 #left joining gives us a vector of exactly the right size
                 ML_prior=left_join(swot_dates,ML_Qt,by='date')
-
-
-                # print('after joining, data frame length')
-                #     print(nrow(ML_prior))
-
-                # print('ml_Qt')
-                # print(ML_Qt)
-                #     bnonk
         
                 ML_Qhat= ML_prior$ML_ensemble
                 #replace NA
@@ -137,36 +106,73 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
                     tulip=tulip,
                    Q_priors=busboi_data_object$Qpriors)
 
-  
+          # Prepare posteriors for NetCDF output
+        posteriors <- list(
+            r = outputs$posterior_r,
+            r_sd = sd(outputs$posterior_r, na.rm = TRUE),  # Calculate if not provided
+            bed = outputs$posterior_bed,
+            prior_Q = busboi_data_object$Qpriors$Q_hat
+        )
 
-        #format the output
-        BUSBOI_df=data.frame(BUSBOI_Q=outputs$posterior_Q,
-                      date=as.Date(busboi_data_object$swot_data$obs_times),
-                      reach_id=this_reach_id,
-                      r=outputs$posterior_r,
-                      bed=paste(outputs$posterior_bed,collapse=','),
-                      prior_Q=busboi_data_object$Qpriors$Q_hat)
+        # #format the output
+        # BUSBOI_df=data.frame(BUSBOI_Q=outputs$posterior_Q,
+        #               date=as.Date(busboi_data_object$swot_data$obs_times),
+        #               reach_id=this_reach_id,
+        #               r=outputs$posterior_r,
+        #               bed=paste(outputs$posterior_bed,collapse=','),
+        #               prior_Q=busboi_data_object$Qpriors$Q_hat)
 
         #toggle this saveRDS on for local work, otherwise use the 'output' function
-        saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
+        # saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
+
+            # Calculate discharge uncertainty if available
+        discharge_sd <- if(!is.null(outputs$posterior_Qsd)) {
+            outputs$posterior_Qsd
+        } else {
+            sd(outputs$posterior_Q, na.rm = TRUE)
+        }
         
-      
-     
-        return(BUSBOI_df)
+ # Write NetCDF output
+        write_output(
+            data = out_data,
+            posteriors = posteriors,
+            discharge = outputs$posterior_Q,
+            discharge_sd = discharge_sd,
+            out_dir = output_path,
+            is_valid = TRUE,
+            obs_times = as.character(as.Date(busboi_data_object$swot_data$obs_times))
+        )
+
 
     } else { #no data to run
 
-    
-        BUSBOI_df=data.frame(busboi_Q=NA,
-                             date=NA,
-                             reach_id=this_reach_id,
-                             prior_Q=NA,
-                             r=NA,
-                             bed=NA)
-        #toggle this saveRDS on for local work, otherwise use the 'output' function
-        saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
+     # No valid data to run - write invalid output
+        posteriors <- list(
+            r = NA,
+            r_sd = NA,
+            bed = NA,
+            prior_Q = NA
+        )
 
-     return(BUSBOI_df)
+        write_output(
+            data = out_data,
+            posteriors = posteriors,
+            discharge = NA,
+            discharge_sd = NA,
+            out_dir = output_path,
+            is_valid = FALSE,
+            obs_times = NA
+        )
+        # BUSBOI_df=data.frame(busboi_Q=NA,
+        #                      date=NA,
+        #                      reach_id=this_reach_id,
+        #                      prior_Q=NA,
+        #                      r=NA,
+        #                      bed=NA)
+        # #toggle this saveRDS on for local work, otherwise use the 'output' function
+        # saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
+
+     # return(BUSBOI_df)
 
     } #end if statment checking for good input
 }#end main
