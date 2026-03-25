@@ -1,5 +1,6 @@
 # Main build pipeline that verifies, builds, and deploys the software
-name: Build Docker image (ghcr.io)
+name: Build BUSBOI Docker image (ghcr.io)
+
 # Events that trigger the workflow
 on:
   # Run workflow manually from the Actions tab
@@ -7,7 +8,7 @@ on:
     inputs:
       version:
         type: string
-        description: Application version to build container image for
+        description: BUSBOI version to build container image for
         required: true
 
 # Only allow 1 execution of this workflow to be running at any given time per-branch.
@@ -18,13 +19,12 @@ concurrency:
 # Environment variables
 env:
   IMAGE_NAME: ${{ github.repository }}
-  POETRY_VERSION: "2.1.1"
-  PYTHON_VERSION: "3.10"
+  R_VERSION: "4.2.0"
   REGISTRY: ghcr.io
 
 jobs:
   container:
-    name: Build container image
+    name: Build BUSBOI container image
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     env:
@@ -54,7 +54,7 @@ jobs:
           flavor: |
             latest=true
 
-      - name: Build and push Docker image
+      - name: Build and push BUSBOI Docker image
         uses: docker/build-push-action@v5
         with:
           context: .
