@@ -59,4 +59,4 @@ LABEL version="1.0" \
 	description="Containerized BUSBOI algorithm." \
 	"confluence.contact"="ntebaldi@umass.edu" \
 	"algorithm.contact"="cjgleason@umass.edu"
-ENTRYPOINT [ "/usr/bin/Rscript", "/app/drive_BUSBOI.R" ]
+ENTRYPOINT [ "/usr/local/bin/Rscript", "/app/drive_BUSBOI.R" ]
