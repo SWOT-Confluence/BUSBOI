@@ -41,11 +41,12 @@ RUN apt -y install \
 	&& /usr/bin/Rscript -e "install.packages('optparse', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 	&& /usr/bin/Rscript -e "install.packages('dplyr', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 	&& /usr/bin/Rscript -e "install.packages('tidyr', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
-	&& /usr/bin/Rscript -e "install.packages('optimx', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('optimx', type='source', dependencies=TRUE, repos='http://cran.rstudio.com/'); if(!requireNamespace('optimx', quietly=TRUE)) stop('optimx failed to install')" \
 	&& /usr/bin/Rscript -e "install.packages('ggplot2', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 	&& /usr/bin/Rscript -e "install.packages('deSolve', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 	&& /usr/bin/Rscript -e "install.packages('jsonlite', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
-	&& /usr/bin/Rscript -e "install.packages('reticulate', dependencies=TRUE, repos='http://cran.rstudio.com/')"
+	&& /usr/bin/Rscript -e "install.packages('reticulate', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+
 # STAGE 2 - Python and python packages for S3 functionality
 FROM stage1 as stage2
 RUN apt update && apt -y install python3 python3-dev python3-pip python3-venv python3-boto3
