@@ -17,6 +17,7 @@ RUN echo "America/New_York" | tee /etc/timezone \
 		libssl-dev \
 		libtiff5-dev \
 		libxml2-dev \
+		libv8-dev \
 		tzdata \
 		wget \
     && locale-gen en_US.UTF-8
