@@ -31,8 +31,11 @@ RUN apt -y install \
 	&& wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc \
 	&& add-apt-repository -y "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" \
 	&& apt update && apt -y install \
-		r-base \
-		r-base-dev \
+    	r-base \
+    	r-base-dev \
+	&& ln -s /usr/local/bin/Rscript /usr/bin/Rscript \
+	&& which Rscript \
+	&& Rscript --version \
 	&& rm -rf /var/lib/apt/lists/* \
 	&& /usr/bin/Rscript -e "install.packages('doParallel', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 	&& /usr/bin/Rscript -e "install.packages('foreach', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
