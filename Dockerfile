@@ -1,54 +1,69 @@
-# Stage 0 - Create from rocker R image
-FROM rocker/r-ver:4.2.0 AS stage0
+# STAGE 0 - Ubuntu packages and R repository
+FROM ubuntu as stage0
+RUN echo "America/New_York" | tee /etc/timezone \
+	&& apt update \
+	&& DEBIAN_FRONTEND=noninteractive apt install -y \
+		build-essential \
+		gcc \
+		gfortran \
+        locales \
+		libcurl4-gnutls-dev \
+		libfontconfig1-dev \
+		libfribidi-dev \
+		libgit2-dev \
+		libharfbuzz-dev \
+		libnetcdf-dev \
+		libnetcdff-dev \
+		libssl-dev \
+		libtiff5-dev \
+		libxml2-dev \
+		tzdata \
+		wget \
+    && locale-gen en_US.UTF-8
 
-# Stage 1 - Install system dependencies
-FROM stage0 AS stage1
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y \
-    libnetcdf-dev \
-    netcdf-bin \
-    libhdf5-dev \
-    libcurl4-openssl-dev \
-    libssl-dev \
-    libxml2-dev \
-    libgdal-dev \
-    libudunits2-dev \
-    libproj-dev \
-    libgeos-dev \
-    git \
-    wget \
-    && apt-get clean \
-    && rm -rf /var/lib/apt/lists/*
+# STAGE 1 - R and R packages
+FROM stage0 as stage1
+RUN apt-get update
+RUN apt -y install \
+		software-properties-common \
+		dirmngr \
+	&& . /etc/lsb-release \
+	&& wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc \
+	&& add-apt-repository -y "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" \ 
+	&& apt update && apt -y install \
+		r-base \
+		r-base-dev \
+	&& rm -rf /var/lib/apt/lists/* \
+	&& /usr/bin/Rscript -e "install.packages('doParallel', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('foreach', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('hydroGOF', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('RNetCDF', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+    && /usr/bin/Rscript -e "install.packages('R.utils', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('optparse', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+    && /usr/bin/Rscript -e "install.packages('dplyr', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+    && /usr/bin/Rscript -e "install.packages('tidyr', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+    && /usr/bin/Rscript -e "install.packages('optimx', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+    && /usr/bin/Rscript -e "install.packages('ggplot2', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+    && /usr/bin/Rscript -e "install.packages('deSolve', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+    && /usr/bin/Rscript -e "install.packages('jsonlite', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('reticulate', dependencies=TRUE, repos='http://cran.rstudio.com/')"
 
-# Stage 2 - Install R packages and BUSBOI code
-FROM stage1 AS stage2
-RUN R -e "install.packages(c( \
-    'dplyr', \
-    'tidyr', \
-    'RNetCDF', \
-    'optimx', \
-    'ggplot2', \
-    'deSolve', \
-    'hydroGOF', \
-    'jsonlite', \
-    'optparse' \
-    ), repos='https://cloud.r-project.org/')"
+# STAGE 2 - Python and python packages for S3 functionality
+FROM stage1 as stage2
+RUN apt update && apt -y install python3 python3-dev python3-pip python3-venv python3-boto3
 
-RUN mkdir -p /app/BUSBOI
-COPY ./BUSBOI /app/BUSBOI/BUSBOI
-COPY ./README.md /app/BUSBOI/README.md
-WORKDIR /app/BUSBOI
+# STAGE 3 set up I/O directories, copy busboi installer and R script, copy sos_read submodule
+FROM stage2 as stage3
+RUN mkdir -p /app/data/input \
+	&& mkdir /app/data/output 
+COPY ./drive_BUSBOI.R /app/
+COPY ./busboi /app/busboi
+#COPY ./sos_read /app/sos_read/
 
-# Make driver executable
-RUN chmod +x /app/BUSBOI/BUSBOI/drive_BUSBOI.R
-
-# Create mount point directories
-RUN mkdir -p /mnt/data/input /mnt/data/output
-
-# Stage 3 - Execute algorithm
-FROM stage2 AS stage3
-LABEL version="1.0"
-LABEL description="BUSBOI v1.0 discharge algorithm."
-LABEL maintainer="SWOT-Confluence"
-ENV CONFLUENCE_US=1
-ENTRYPOINT ["/app/BUSBOI/BUSBOI/drive_BUSBOI.R"]
+# STAGE 3 - Execute algorithm
+FROM stage3 as stage4
+LABEL version="1.0" \
+	description="Containerized BUSBOI algorithm." \
+	"confluence.contact"="ntebaldi@umass.edu" \
+	"algorithm.contact"="cjgleason@umass.edu"
+ENTRYPOINT [ "/usr/bin/Rscript",  "/app/drive_BUSBOI.R" ]
