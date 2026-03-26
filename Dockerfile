@@ -1,5 +1,5 @@
 # STAGE 0 - Ubuntu packages and R repository
-FROM ubuntu as stage0
+FROM ubuntu AS stage0
 RUN echo "America/New_York" | tee /etc/timezone \
 	&& apt update \
 	&& DEBIAN_FRONTEND=noninteractive apt install -y \
@@ -21,7 +21,7 @@ RUN echo "America/New_York" | tee /etc/timezone \
 		wget \
     && locale-gen en_US.UTF-8
 # STAGE 1 - R and R packages
-FROM stage0 as stage1
+FROM stage0 AS stage1
 RUN apt-get update
 RUN apt -y install \
 		software-properties-common \
@@ -45,7 +45,7 @@ RUN apt -y install \
 	&& /usr/bin/Rscript -e "install.packages('ggplot2', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 	&& /usr/bin/Rscript -e "install.packages('deSolve', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
 	&& /usr/bin/Rscript -e "install.packages('jsonlite', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
-	&& /usr/bin/Rscript -e "install.packages('reticulate', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('reticulate', dependencies=TRUE, repos='http://cran.rstudio.com/')" 
 
 # STAGE 2 - Python and python packages for S3 functionality
 FROM stage1 as stage2
