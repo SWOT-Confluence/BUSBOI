@@ -1,30 +1,62 @@
+# STAGE 0 - Ubuntu packages and R repository
 FROM ubuntu as stage0
 RUN echo "America/New_York" | tee /etc/timezone \
-    && apt update \
-    && DEBIAN_FRONTEND=noninteractive apt install -y \
-        build-essential gcc gfortran locales \
-        libcurl4-gnutls-dev libfontconfig1-dev libfribidi-dev \
-        libgit2-dev libharfbuzz-dev libnetcdf-dev libnetcdff-dev \
-        libssl-dev libtiff5-dev libxml2-dev tzdata wget \
-        software-properties-common dirmngr \
-        python3 python3-dev python3-pip python3-venv python3-boto3 \
+	&& apt update \
+	&& DEBIAN_FRONTEND=noninteractive apt install -y \
+		build-essential \
+		gcc \
+		gfortran \
+        locales \
+		libcurl4-gnutls-dev \
+		libfontconfig1-dev \
+		libfribidi-dev \
+		libgit2-dev \
+		libharfbuzz-dev \
+		libnetcdf-dev \
+		libnetcdff-dev \
+		libssl-dev \
+		libtiff5-dev \
+		libxml2-dev \
+		tzdata \
+		wget \
     && locale-gen en_US.UTF-8
-
+# STAGE 1 - R and R packages
 FROM stage0 as stage1
-RUN . /etc/lsb-release \
-    && wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc \
-        | tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc \
-    && add-apt-repository -y "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" \
-    && apt update && apt -y install r-base r-base-dev \
-    && rm -rf /var/lib/apt/lists/* \
-    && /usr/local/bin/Rscript -e "install.packages(c('doParallel','foreach','hydroGOF','RNetCDF','R.utils','optparse','dplyr','tidyr','optimx','ggplot2','deSolve','jsonlite','reticulate'), dependencies=TRUE, repos='http://cran.rstudio.com/')"
-
-FROM stage1
-RUN mkdir -p /app/data/input && mkdir -p /app/data/output
+RUN apt-get update
+RUN apt -y install \
+		software-properties-common \
+		dirmngr \
+	&& . /etc/lsb-release \
+	&& wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc \
+	&& add-apt-repository -y "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/" \
+	&& apt update && apt -y install \
+		r-base \
+		r-base-dev \
+	&& rm -rf /var/lib/apt/lists/* \
+	&& /usr/bin/Rscript -e "install.packages('doParallel', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('foreach', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('hydroGOF', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('RNetCDF', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('R.utils', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('optparse', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('dplyr', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('tidyr', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('optimx', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('ggplot2', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('deSolve', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('jsonlite', dependencies=TRUE, repos='http://cran.rstudio.com/')" \
+	&& /usr/bin/Rscript -e "install.packages('reticulate', dependencies=TRUE, repos='http://cran.rstudio.com/')"
+# STAGE 2 - Python and python packages for S3 functionality
+FROM stage1 as stage2
+RUN apt update && apt -y install python3 python3-dev python3-pip python3-venv python3-boto3
+# STAGE 3 - set up I/O directories, copy BUSBOI R scripts
+FROM stage2 as stage3
+COPY ./BUSBOI /app/BUSBOI/
 COPY ./drive_BUSBOI.R /app/
-COPY ./BUSBOI /app/BUSBOI
+# STAGE 4 - Execute algorithm
+FROM stage3 as stage4
 LABEL version="1.0" \
-    description="Containerized BUSBOI algorithm." \
-    "confluence.contact"="ntebaldi@umass.edu" \
-    "algorithm.contact"="cjgleason@umass.edu"
-ENTRYPOINT [ "/usr/local/bin/Rscript", "/app/drive_BUSBOI.R" ]
+	description="Containerized BUSBOI algorithm." \
+	"confluence.contact"="ntebaldi@umass.edu" \
+	"algorithm.contact"="cjgleason@umass.edu"
+ENTRYPOINT [ "/usr/bin/Rscript", "/app/drive_BUSBOI.R" ]
