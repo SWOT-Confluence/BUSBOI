@@ -57,7 +57,7 @@ FROM stage2 as stage3
 RUN mkdir -p /app/data/input \
 	&& mkdir /app/data/output 
 COPY ./drive_BUSBOI.R /app/
-COPY ./busboi /app/busboi
+COPY ./BUSBOI /app/BUSBOI
 #COPY ./sos_read /app/sos_read/
 
 # STAGE 3 - Execute algorithm
