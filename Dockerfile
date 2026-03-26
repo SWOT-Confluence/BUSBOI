@@ -65,6 +65,7 @@ COPY ./BUSBOI /app/BUSBOI
 
 # STAGE 3 - Execute algorithm
 FROM stage3 as stage4
+RUN ln -sf /usr/local/bin/Rscript /usr/bin/Rscript
 LABEL version="1.0" \
 	description="Containerized BUSBOI algorithm." \
 	"confluence.contact"="ntebaldi@umass.edu" \
