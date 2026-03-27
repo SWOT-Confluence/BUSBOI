@@ -29,13 +29,13 @@ opt <- parse_args(opt_parser)
 # Get BUSBOI directory
 args <- commandArgs(trailingOnly = FALSE)
 script_path <- sub("--file=", "", args[grep("--file=", args)])
-BUSBOI_DIR <- dirname(script_path)
-if(length(BUSBOI_DIR) == 0 || BUSBOI_DIR == "") {
-    BUSBOI_DIR <- getwd()
+SCRIPT_DIR <- dirname(script_path)
+if(length(SCRIPT_DIR) == 0 || SCRIPT_DIR == "") {
+    SCRIPT_DIR <- getwd()
 }
+BUSBOI_DIR <- file.path(SCRIPT_DIR, "BUSBOI")
 
-# Load configuration first
-source(file.path(BUSBOI_DIR, 'config.R'))
+source(file.path(SCRIPT_DIR, 'config.R'))
 
 # Print configuration if verbose
 if(VERBOSE) {
