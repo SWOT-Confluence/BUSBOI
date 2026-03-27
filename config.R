@@ -43,11 +43,15 @@ FIX_BED <- 0
 # INPUT/OUTPUT DIRECTORIES
 # ==============================================================================
 
-# Input directory (Confluence standard)
-IN_DIR <- "/mnt/data/input"
+# Local testing overrides - comment out when building container
+# IN_DIR <- '/nas/cee-water/cjgleason/colin/Confluence_Offline/debug_testing/confluence_debug/debug_mnt/input/'
+# OUT_DIR <- '/nas/cee-water/cjgleason/colin/Confluence_Offline/debug_testing/confluence_debug/debug_mnt/flpe/busboi/'
 
-# Output directory (Confluence standard)
-OUT_DIR <- "/mnt/data/output"
+# # Input directory (Confluence standard)
+ IN_DIR <- "/mnt/input"
+
+# # Output directory (Confluence standard)
+ OUT_DIR <- "/mnt/flpe/busboi"
 
 # ==============================================================================
 # DATA FILE PATTERNS
@@ -55,39 +59,6 @@ OUT_DIR <- "/mnt/data/output"
 
 # SWOT data file pattern
 SWOT_FILE_PATTERN <- "_SWOT.nc"
-
-# SOS prior file patterns by continent
-SOS_FILES <- c(
-  'eu' = 'eu_sword_v17b_SOS_priors.nc',
-  'na' = 'na_sword_v17b_SOS_priors.nc',
-  'sa' = 'sa_sword_v17b_SOS_priors.nc',
-  'oc' = 'oc_sword_v17b_SOS_priors.nc',
-  'af' = 'af_sword_v17b_SOS_priors.nc',
-  'as' = 'as_sword_v17b_SOS_priors.nc'
-)
-
-# SWORD file patterns by continent
-SWORD_FILES <- c(
-  'eu' = 'eu_sword_v17b.nc',
-  'na' = 'na_sword_v17b.nc',
-  'sa' = 'sa_sword_v17b.nc',
-  'oc' = 'oc_sword_v17b.nc',
-  'af' = 'af_sword_v17b.nc',
-  'as' = 'as_sword_v17b.nc'
-)
-
-# Continent code to continent name mapping
-CONTINENT_MAP <- list(
-  '1' = 'af',  # Africa
-  '2' = 'eu',  # Europe
-  '3' = 'as',  # Asia (Siberia)
-  '4' = 'as',  # Asia
-  '5' = 'oc',  # Oceania
-  '6' = 'sa',  # South America
-  '7' = 'na',  # North America (North)
-  '8' = 'na',  # North America (South)
-  '9' = 'na'   # North America (Arctic)
-)
 
 # ==============================================================================
 # NETCDF OUTPUT SETTINGS
@@ -153,7 +124,7 @@ print_config <- function() {
   cat(sprintf("TULIP:             %s\n", TULIP))
   cat(sprintf("GVF Correction:    %s\n", ifelse(GVF_ON == 1, "ON", "OFF")))
   cat(sprintf("Bed Mode:          %s\n", 
-      c("5-point", "1-point", "Fixed")[FIX_BED + 1]))
+      c("10-point", "1-point", "Fixed")[FIX_BED + 1]))
   cat(sprintf("Input Directory:   %s\n", IN_DIR))
   cat(sprintf("Output Directory:  %s\n", OUT_DIR))
   cat("========================================\n")

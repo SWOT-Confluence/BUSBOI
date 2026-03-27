@@ -304,6 +304,7 @@ for (i in 1:length(global_Q)){
    
 
     
+    
     final_pars=c(global_r,allQ,global_bed)
 
      ##debugging toggle
@@ -326,10 +327,14 @@ plot_final_channel=jeff_calcHgivenparams(variables=final_pars,
 
     
 
-
+    #change to df to make output simpler
+    final_output_df=list(r=global_r,
+                               Q=allQ,
+                               bed=global_bed,
+                               chainage=sample_x)
 
     #the par variable is of the form (r, Q, Zo). Dimensions vary with hyperparameters
     # return(optsolution@solution) 
-    return(final_pars)
+    return(final_output_df)
     
     }

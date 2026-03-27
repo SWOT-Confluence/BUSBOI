@@ -1,43 +1,35 @@
-main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_on,Q_prior,tulip){
+main_function=function(this_reach_id,swot_base,sos_base,sword_base,output_path,fix_bed,GVF_on,Q_prior,tulip){
  
-    # Source the output writer
-    source(file.path(dirname(sys.frame(1)$ofile), 'output.R'))
     
-  # Construct file paths from base directories
+    # Construct file paths from base directories
     swot_file <- paste0(swot_base, this_reach_id, '_SWOT.nc')
     
     # Determine continent code from reach_id
     continent_code <- substr(this_reach_id, 1, 1)
     
-    # SOS files - now read from input directory
-    sos_files=paste0(sos_base,
-                     c('eu_sword_v17b_SOS_priors.nc',
-                     'na_sword_v17b_SOS_priors.nc',
-                     'sa_sword_v17b_SOS_priors.nc',
-                     'oc_sword_v17b_SOS_priors.nc',
-                     'af_sword_v17b_SOS_priors.nc',
-                     'as_sword_v17b_SOS_priors.nc'))
-
-    # SWORD files - now read from input directory
-    swordpaths <- paste0(sword_base,
-                        c('eu_sword_v17b.nc',
-                          'na_sword_v17b.nc',
-                          'sa_sword_v17b.nc',
-                          'oc_sword_v17b.nc',
-                          'af_sword_v17b.nc',
-                          'as_sword_v17b.nc'))
-
-    if(continent_code=='7'){sos_file=sos_files[2]}
-    if(continent_code=='8'){sos_file=sos_files[2]}
-    if(continent_code=='1'){sos_file=sos_files[5]}
-    if(continent_code=='2'){sos_file=sos_files[1]}
-    if(continent_code=='9'){sos_file=sos_files[2]}
-    if(continent_code=='6'){sos_file=sos_files[3]}
-    if(continent_code=='5'){sos_file=sos_files[4]}
-    if(continent_code=='4'){sos_file=sos_files[6]}
-    if(continent_code=='3'){sos_file=sos_files[6]}
-
-
+    # SOS files - read from input directory
+    sos_files <- list.files(sos_base, full.names=TRUE)
+    
+    # SWORD files - read from input directory
+    swordpaths <- list.files(sword_base, full.names=TRUE)
+    
+    # Continent code to two-letter prefix mapping
+    continent_index <- c(
+        '1' = 'af',
+        '2' = 'eu',
+        '3' = 'sa',
+        '4' = 'sa',
+        '5' = 'oc',
+        '6' = 'sa',
+        '7' = 'na',
+        '8' = 'na',
+        '9' = 'na'
+    )
+    
+    prefix <- continent_index[continent_code]
+    sos_file <- sos_files[grepl(paste0("^", prefix), basename(sos_files))]
+    sword_file <- swordpaths[grepl(paste0("^", prefix), basename(swordpaths))]
+    
     #fit hydraulics
     #do rejection sampling
     #get Q priors
@@ -46,6 +38,9 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
     busboi_data_object =get_input(swot_file=swot_file, 
                               sos_file=sos_file, 
                               reach_id_in=this_reach_id)
+    
+    #if we have something to run on 
+    if(busboi_data_object$valid==TRUE){
 
     # Prepare metadata for output
     out_data <- list(
@@ -55,8 +50,6 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
         invalid_times = c()  # Track invalid times if needed
     )
     
-    #if we have something to run on 
-    if(busboi_data_object$valid==TRUE){
 
         ## CODE to test/prove the value of the daily prior for the paper. Turn OFF
         ## for confluence production runs.
@@ -96,6 +89,7 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
         
                 }
 
+      
 
         #sovle for Q
         outputs=run_BUSBOI(this_reach_id,
@@ -106,38 +100,22 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
                     tulip=tulip,
                    Q_priors=busboi_data_object$Qpriors)
 
+
           # Prepare posteriors for NetCDF output
         posteriors <- list(
-            r = outputs$posterior_r,
-            r_sd = sd(outputs$posterior_r, na.rm = TRUE),  # Calculate if not provided
-            bed = outputs$posterior_bed,
-            prior_Q = busboi_data_object$Qpriors$Q_hat
+            r = outputs$r,
+            bed = outputs$bed,
+            prior_Q = busboi_data_object$Qpriors$Q_hat,
+            Q=outputs$Q,
+            chainage=outputs$chainage
         )
 
-        # #format the output
-        # BUSBOI_df=data.frame(BUSBOI_Q=outputs$posterior_Q,
-        #               date=as.Date(busboi_data_object$swot_data$obs_times),
-        #               reach_id=this_reach_id,
-        #               r=outputs$posterior_r,
-        #               bed=paste(outputs$posterior_bed,collapse=','),
-        #               prior_Q=busboi_data_object$Qpriors$Q_hat)
 
-        #toggle this saveRDS on for local work, otherwise use the 'output' function
-        # saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
-
-            # Calculate discharge uncertainty if available
-        discharge_sd <- if(!is.null(outputs$posterior_Qsd)) {
-            outputs$posterior_Qsd
-        } else {
-            sd(outputs$posterior_Q, na.rm = TRUE)
-        }
-        
+  
  # Write NetCDF output
         write_output(
-            data = out_data,
+            reach_id=this_reach_id,
             posteriors = posteriors,
-            discharge = outputs$posterior_Q,
-            discharge_sd = discharge_sd,
             out_dir = output_path,
             is_valid = TRUE,
             obs_times = as.character(as.Date(busboi_data_object$swot_data$obs_times))
@@ -149,30 +127,21 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
      # No valid data to run - write invalid output
         posteriors <- list(
             r = NA,
-            r_sd = NA,
             bed = NA,
-            prior_Q = NA
+            prior_Q = NA,
+            Q=NA,
+            chainage=NA
         )
+
 
         write_output(
-            data = out_data,
+            reach_id=this_reach_id,
             posteriors = posteriors,
-            discharge = NA,
-            discharge_sd = NA,
             out_dir = output_path,
-            is_valid = FALSE,
+            is_valid = TRUE,
             obs_times = NA
         )
-        # BUSBOI_df=data.frame(busboi_Q=NA,
-        #                      date=NA,
-        #                      reach_id=this_reach_id,
-        #                      prior_Q=NA,
-        #                      r=NA,
-        #                      bed=NA)
-        # #toggle this saveRDS on for local work, otherwise use the 'output' function
-        # saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
 
-     # return(BUSBOI_df)
 
     } #end if statment checking for good input
 }#end main

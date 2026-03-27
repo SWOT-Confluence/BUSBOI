@@ -13,6 +13,8 @@ suppressMessages({
     library(hydroGOF)
     library(jsonlite)
     library(optparse)
+    library(purrr)
+    library(geosphere)
 })
 
 # Parse command line arguments
@@ -23,19 +25,35 @@ option_list <- list(
                 help="Array index for reach to process [default %default]", metavar="integer")
 )
 
+###comment out for local testing
 opt_parser <- OptionParser(option_list=option_list)
 opt <- parse_args(opt_parser)
 
 # Get BUSBOI directory
 args <- commandArgs(trailingOnly = FALSE)
 script_path <- sub("--file=", "", args[grep("--file=", args)])
-BUSBOI_DIR <- dirname(script_path)
-if(length(BUSBOI_DIR) == 0 || BUSBOI_DIR == "") {
-    BUSBOI_DIR <- getwd()
+SCRIPT_DIR <- dirname(script_path)
+if(length(SCRIPT_DIR) == 0 || SCRIPT_DIR == "") {
+    SCRIPT_DIR <- getwd()
 }
 
-# Load configuration first
-source(file.path(BUSBOI_DIR, 'config.R'))
+Read reaches from JSON file
+reach_json_path <- file.path(IN_DIR, opt$reachfile)
+if(!file.exists(reach_json_path)) {
+    stop(paste0("Reaches file not found: ", reach_json_path))
+}
+
+
+# ##for local testing-
+# SCRIPT_DIR='/nas/cee-water/cjgleason/colin/Confluence_Offline/debug_testing/modules/busboi/'
+
+# reach_json_path='/nas/cee-water/cjgleason/colin/Confluence_Offline/debug_testing/confluence_debug/debug_mnt/input/reaches.json'
+
+# #---------------
+
+BUSBOI_DIR <- file.path(SCRIPT_DIR, "BUSBOI")
+
+source(file.path(SCRIPT_DIR, 'config.R'))
 
 # Print configuration if verbose
 if(VERBOSE) {
@@ -63,34 +81,27 @@ source(file.path(BUSBOI_DIR, 'Slope_empirical.R'))
 source(file.path(BUSBOI_DIR, 'main_function.R'))
 source(file.path(BUSBOI_DIR, 'write_output.R'))
 
-# Read reaches from JSON file
-reach_json_path <- file.path(IN_DIR, opt$reachfile)
-if(!file.exists(reach_json_path)) {
-    stop(paste0("Reaches file not found: ", reach_json_path))
-}
 
+
+# 
 reaches <- fromJSON(reach_json_path)
 
-# Get reach_id from index
-if(opt$index < 0 || opt$index >= length(reaches)) {
-    stop(paste0("Index ", opt$index, " out of bounds. Valid range: 0-", length(reaches)-1))
-}
 
-reach_id <- reaches[[opt$index + 1]]  # R is 1-indexed
+# cat(paste0("Processing reach [", opt$index, "]: ", reach_id, "\n"))
 
-cat(paste0("Processing reach [", opt$index, "]: ", reach_id, "\n"))
-
+for (this_reach in reaches$reach_id){
 # Run BUSBOI with config parameters
 result <- main_function(
-    this_reach_id = reach_id,
-    swot_base = paste0(IN_DIR, "/"),
-    sos_base = paste0(IN_DIR, "/"),
-    sword_base = paste0(IN_DIR, "/"),
+    this_reach_id = this_reach,
+    swot_base = paste0(IN_DIR, "/swot/"),
+    sos_base = paste0(IN_DIR, "/sos/"),
+    sword_base = paste0(IN_DIR, "/sword/"),
     output_path = paste0(OUT_DIR, "/"),
     fix_bed = FIX_BED,
     GVF_on = GVF_ON,
     Q_prior = Q_PRIOR,
     tulip = TULIP
 )
+    }
 
 cat("BUSBOI processing complete\n")

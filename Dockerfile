@@ -1,54 +1,40 @@
-# Stage 0 - Create from rocker R image
-FROM rocker/r-ver:4.2.0 AS stage0
-
-# Stage 1 - Install system dependencies
-FROM stage0 AS stage1
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update && apt-get install -y \
+# STAGE 0 - R base image with system dependencies pre-installed
+FROM rocker/r-ver:4.4.2 as stage0
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     libnetcdf-dev \
-    netcdf-bin \
-    libhdf5-dev \
-    libcurl4-openssl-dev \
+    libnetcdff-dev \
     libssl-dev \
-    libxml2-dev \
-    libgdal-dev \
+    libcurl4-openssl-dev \
     libudunits2-dev \
-    libproj-dev \
+    libgdal-dev \
     libgeos-dev \
-    git \
-    wget \
-    && apt-get clean \
+    libproj-dev \
+    cmake \
+    libfontconfig1-dev \
+    libfreetype6-dev \
+    libharfbuzz-dev \
+    libfribidi-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Stage 2 - Install R packages and BUSBOI code
-FROM stage1 AS stage2
-RUN R -e "install.packages(c( \
-    'dplyr', \
-    'tidyr', \
-    'RNetCDF', \
-    'optimx', \
-    'ggplot2', \
-    'deSolve', \
-    'hydroGOF', \
-    'jsonlite', \
-    'optparse' \
-    ), repos='https://cloud.r-project.org/')"
+# STAGE 1 - R packages
+FROM stage0 as stage1
+RUN /usr/local/bin/Rscript -e "\
+    pkgs <- c('doParallel','foreach','hydroGOF','RNetCDF','R.utils','optparse','purrr','geosphere','dplyr','tidyr','optimx','ggplot2','deSolve','jsonlite'); \
+    install.packages(pkgs, dependencies=TRUE, repos='http://cran.rstudio.com/'); \
+    missing <- pkgs[!pkgs %in% installed.packages()[,'Package']]; \
+    if (length(missing) > 0) stop(paste('Failed to install:', paste(missing, collapse=', ')))"
 
-RUN mkdir -p /app/BUSBOI
-COPY ./BUSBOI /app/BUSBOI/BUSBOI
-COPY ./README.md /app/BUSBOI/README.md
-WORKDIR /app/BUSBOI
+# STAGE 2 - Copy files
+FROM stage1 as stage2
+RUN mkdir -p /app/data/input && mkdir -p /app/data/output
+COPY ./BUSBOI /app/BUSBOI/
+COPY ./drive_BUSBOI.R /app/
+COPY ./config.R /app/
 
-# Make driver executable
-RUN chmod +x /app/BUSBOI/BUSBOI/drive_BUSBOI.R
-
-# Create mount point directories
-RUN mkdir -p /mnt/data/input /mnt/data/output
-
-# Stage 3 - Execute algorithm
-FROM stage2 AS stage3
-LABEL version="1.0"
-LABEL description="BUSBOI v1.0 discharge algorithm."
-LABEL maintainer="SWOT-Confluence"
-ENV CONFLUENCE_US=1
-ENTRYPOINT ["/app/BUSBOI/BUSBOI/drive_BUSBOI.R"]
+# STAGE 3 - Final
+FROM stage2 as stage3
+LABEL version="1.0" \
+    description="Containerized BUSBOI algorithm." \
+    "confluence.contact"="ntebaldi@umass.edu" \
+    "algorithm.contact"="cjgleason@umass.edu"
+ENTRYPOINT [ "/usr/local/bin/Rscript", "/app/drive_BUSBOI.R" ]
