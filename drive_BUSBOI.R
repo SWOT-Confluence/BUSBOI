@@ -86,9 +86,6 @@ source(file.path(BUSBOI_DIR, 'write_output.R'))
 # 
 reaches <- fromJSON(reach_json_path)
 
-# print(reaches)
-# bonks
-# reach_id <- reaches[[opt$index + 1]]  # R is 1-indexed
 
 # cat(paste0("Processing reach [", opt$index, "]: ", reach_id, "\n"))
 
