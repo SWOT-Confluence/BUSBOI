@@ -3,6 +3,17 @@ FROM rocker/r-ver:4.4.2 as stage0
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
     libnetcdf-dev \
     libnetcdff-dev \
+    libssl-dev \
+    libcurl4-openssl-dev \
+    libudunits2-dev \
+    libgdal-dev \
+    libgeos-dev \
+    libproj-dev \
+    cmake \
+    libfontconfig1-dev \
+    libfreetype6-dev \
+    libharfbuzz-dev \
+    libfribidi-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # STAGE 1 - R packages
