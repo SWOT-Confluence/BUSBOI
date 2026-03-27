@@ -29,6 +29,7 @@ FROM stage1 as stage2
 RUN mkdir -p /app/data/input && mkdir -p /app/data/output
 COPY ./BUSBOI /app/BUSBOI/
 COPY ./drive_BUSBOI.R /app/
+COPY ./config.R /app/
 
 # STAGE 3 - Final
 FROM stage2 as stage3
