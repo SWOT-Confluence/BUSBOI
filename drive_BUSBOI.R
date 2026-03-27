@@ -26,30 +26,30 @@ option_list <- list(
 )
 
 ###comment out for local testing
-# opt_parser <- OptionParser(option_list=option_list)
-# opt <- parse_args(opt_parser)
+opt_parser <- OptionParser(option_list=option_list)
+opt <- parse_args(opt_parser)
 
-# # Get BUSBOI directory
-# args <- commandArgs(trailingOnly = FALSE)
-# script_path <- sub("--file=", "", args[grep("--file=", args)])
-# SCRIPT_DIR <- dirname(script_path)
-# if(length(SCRIPT_DIR) == 0 || SCRIPT_DIR == "") {
-#     SCRIPT_DIR <- getwd()
-# }
+# Get BUSBOI directory
+args <- commandArgs(trailingOnly = FALSE)
+script_path <- sub("--file=", "", args[grep("--file=", args)])
+SCRIPT_DIR <- dirname(script_path)
+if(length(SCRIPT_DIR) == 0 || SCRIPT_DIR == "") {
+    SCRIPT_DIR <- getwd()
+}
 
-# Read reaches from JSON file
-# reach_json_path <- file.path(IN_DIR, opt$reachfile)
-# if(!file.exists(reach_json_path)) {
-#     stop(paste0("Reaches file not found: ", reach_json_path))
-# }
+Read reaches from JSON file
+reach_json_path <- file.path(IN_DIR, opt$reachfile)
+if(!file.exists(reach_json_path)) {
+    stop(paste0("Reaches file not found: ", reach_json_path))
+}
 
 
-##for local testing-
-SCRIPT_DIR='/nas/cee-water/cjgleason/colin/Confluence_Offline/debug_testing/modules/busboi/'
+# ##for local testing-
+# SCRIPT_DIR='/nas/cee-water/cjgleason/colin/Confluence_Offline/debug_testing/modules/busboi/'
 
-reach_json_path='/nas/cee-water/cjgleason/colin/Confluence_Offline/debug_testing/confluence_debug/debug_mnt/input/reaches.json'
+# reach_json_path='/nas/cee-water/cjgleason/colin/Confluence_Offline/debug_testing/confluence_debug/debug_mnt/input/reaches.json'
 
-#---------------
+# #---------------
 
 BUSBOI_DIR <- file.path(SCRIPT_DIR, "BUSBOI")
 
