@@ -44,14 +44,14 @@ FIX_BED <- 0
 # ==============================================================================
 
 # Local testing overrides - comment out when building container
-IN_DIR <- '/nas/cee-water/cjgleason/colin/Confluence_Offline/debug_testing/confluence_debug/debug_mnt/input/'
-OUT_DIR <- '/nas/cee-water/cjgleason/colin/Confluence_Offline/debug_testing/confluence_debug/debug_mnt/flpe/busboi/'
+# IN_DIR <- '/nas/cee-water/cjgleason/colin/Confluence_Offline/debug_testing/confluence_debug/debug_mnt/input/'
+# OUT_DIR <- '/nas/cee-water/cjgleason/colin/Confluence_Offline/debug_testing/confluence_debug/debug_mnt/flpe/busboi/'
 
 # # Input directory (Confluence standard)
-# IN_DIR <- "/mnt/data/input"
+ IN_DIR <- "/mnt/input"
 
 # # Output directory (Confluence standard)
-# OUT_DIR <- "/mnt/data/output"
+ OUT_DIR <- "/mnt/flpe/busboi"
 
 # ==============================================================================
 # DATA FILE PATTERNS
