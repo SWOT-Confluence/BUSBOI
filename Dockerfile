@@ -19,7 +19,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y \
 # STAGE 1 - R packages
 FROM stage0 as stage1
 RUN /usr/local/bin/Rscript -e "\
-    pkgs <- c('doParallel','foreach','hydroGOF','RNetCDF','R.utils','optparse','dplyr','tidyr','optimx','ggplot2','deSolve','jsonlite'); \
+    pkgs <- c('doParallel','foreach','hydroGOF','RNetCDF','R.utils','optparse','purrr','geosphere','dplyr','tidyr','optimx','ggplot2','deSolve','jsonlite'); \
     install.packages(pkgs, dependencies=TRUE, repos='http://cran.rstudio.com/'); \
     missing <- pkgs[!pkgs %in% installed.packages()[,'Package']]; \
     if (length(missing) > 0) stop(paste('Failed to install:', paste(missing, collapse=', ')))"
