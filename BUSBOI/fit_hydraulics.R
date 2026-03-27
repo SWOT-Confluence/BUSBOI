@@ -1,10 +1,12 @@
 
 fit_hydraulics=function(swot_file,sos_file,reach_id_in){
 
-  # Libraries
-    library(RNetCDF,quietly=TRUE,warn.conflicts = FALSE)
-    library(purrr)
+  # # Libraries
+  #   library(RNetCDF,quietly=TRUE,warn.conflicts = FALSE)
 
+
+
+    
   # getSWOT
     swot_in=open.nc(swot_file)
     swot_data=read.nc(swot_in,recursive=TRUE)
@@ -55,11 +57,10 @@ fit_hydraulics=function(swot_file,sos_file,reach_id_in){
     Wobs=select(node_width_df,time,xs_id,node_width)%>%
          pivot_wider(names_from=time,values_from=node_width,values_fn=first)
 
-  # get the chainage here, use the node ids in this order
-
-   
+  # get the chainage here, use the node ids in this orde
     
     station_df=calculate_cum_dist(sos,xs_ids)
+    
 if(typeof(station_df)=='character'){return('no good')}
     chainage=station_df$stationvec
 
@@ -133,6 +134,8 @@ if(typeof(station_df)=='character'){return('no good')}
 
     #this is the data we have
     dates_we_have=names(Hobs)
+
+
 
     #reject if the matrix is too small
     if(ncol(Hobs)<num_times_to_invert){return('no good')}
