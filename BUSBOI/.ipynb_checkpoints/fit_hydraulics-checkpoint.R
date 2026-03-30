@@ -1,9 +1,6 @@
 
 fit_hydraulics=function(swot_file,sos_file,reach_id_in){
 
-  # # Libraries
-  #   library(RNetCDF,quietly=TRUE,warn.conflicts = FALSE)
-    library(purrr)
 
 
     
@@ -12,14 +9,46 @@ fit_hydraulics=function(swot_file,sos_file,reach_id_in){
     swot_data=read.nc(swot_in,recursive=TRUE)
     close.nc(swot_in)
     
-  # Get SOS
-    sos_in=open.nc(sos_file)
-    sos=read.nc(sos_in,recursive=TRUE)
+# Get SOS - selective read to avoid loading entire continental file
+    sos_in <- open.nc(sos_file)
+
+    # Open groups directly
+    reaches_grp <- grp.inq.nc(sos_in, "reaches")$self
+    nodes_grp <- grp.inq.nc(sos_in, "nodes")$self
+
+    # Read just reach IDs to find index
+    sos_reach_ids <- var.get.nc(reaches_grp, "reach_id")
+    sos_reach_index <- which(sos_reach_ids == as.numeric(reach_id_in))
+
+    if(length(sos_reach_index) == 0) {
+        close.nc(sos_in)
+        return('no good')
+    }
+
+    # Read just the node reach_ids to find node indices
+    sos_node_reach_ids <- var.get.nc(nodes_grp, "reach_id")
+    sos_node_index <- which(sos_node_reach_ids == as.numeric(reach_id_in))
+
+    if(length(sos_node_index) == 0) {
+        close.nc(sos_in)
+        return('no good')
+    }
+
+    # Read only the three node variables needed by calculate_cum_dist
+    sos_node_ids <- var.get.nc(nodes_grp, "node_id")
+    sos_node_x   <- var.get.nc(nodes_grp, "x")
+    sos_node_y   <- var.get.nc(nodes_grp, "y")
+
     close.nc(sos_in)
 
-  # sos comes in by continent. Need to filter to this reach
-    sos_reach_index=which(sos$reaches$reach_id == reach_id_in)
-    sos_node_index=which(sos$nodes$reach_id == reach_id_in)
+    # Reconstruct minimal sos object for calculate_cum_dist
+    sos <- list(
+        nodes = list(
+            node_id = sos_node_ids[sos_node_index],
+            x       = sos_node_x[sos_node_index],
+            y       = sos_node_y[sos_node_index]
+        )
+    )
 
   # now get SWOT data
     obs_times=swot_data$reach$time_str
