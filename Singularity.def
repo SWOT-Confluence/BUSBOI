@@ -1,0 +1,10 @@
+Bootstrap: docker
+From: ghcr.io/cjgleason/busboi:latest
+
+%files
+    BUSBOI/. /app/BUSBOI/
+    drive_BUSBOI.R /app/
+    config.R /app/
+
+%runscript
+    exec /usr/local/bin/Rscript /app/drive_BUSBOI.R "$@"
