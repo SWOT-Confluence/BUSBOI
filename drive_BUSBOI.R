@@ -37,7 +37,7 @@ if(length(SCRIPT_DIR) == 0 || SCRIPT_DIR == "") {
     SCRIPT_DIR <- getwd()
 }
 
-Read reaches from JSON file
+# Read reaches from JSON file
 reach_json_path <- file.path(IN_DIR, opt$reachfile)
 if(!file.exists(reach_json_path)) {
     stop(paste0("Reaches file not found: ", reach_json_path))
