@@ -307,23 +307,23 @@ for (i in 1:length(global_Q)){
     
     final_pars=c(global_r,allQ,global_bed)
 
-     ##debugging toggle
-plot_final_channel=jeff_calcHgivenparams(variables=final_pars,
-                  hyperparams=hyperparams,
-                 plot_switch=1,
-                 this_reach_id=this_reach_id,
-                 obj_error=obj_error,
-                 replacement_error=replacement_error,
-                 smooth_sf=smooth_sf,
-                 Qpenalty=Qpenalty,
-                 Sfpenalty=Sfpenalty,
-                 GVF_on=GVF_on,
-                 H_DS_init=H_DS_init,
-                 fix_bed=fix_bed,
-                     tulip=tulip)
+#      ##debugging toggle
+# plot_final_channel=jeff_calcHgivenparams(variables=final_pars,
+#                   hyperparams=hyperparams,
+#                  plot_switch=1,
+#                  this_reach_id=this_reach_id,
+#                  obj_error=obj_error,
+#                  replacement_error=replacement_error,
+#                  smooth_sf=smooth_sf,
+#                  Qpenalty=Qpenalty,
+#                  Sfpenalty=Sfpenalty,
+#                  GVF_on=GVF_on,
+#                  H_DS_init=H_DS_init,
+#                  fix_bed=fix_bed,
+#                      tulip=tulip)
 
-        saveRDS(plot_final_channel,paste0('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/channel_examples/',
-                                        this_reach_id,'final_channel.rds'))
+#         saveRDS(plot_final_channel,paste0('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/channel_examples/',
+#                                         this_reach_id,'final_channel.rds'))
 
     
 
@@ -333,8 +333,6 @@ plot_final_channel=jeff_calcHgivenparams(variables=final_pars,
                                bed=global_bed,
                                chainage=sample_x)
 
-    #the par variable is of the form (r, Q, Zo). Dimensions vary with hyperparameters
-    # return(optsolution@solution) 
     return(final_output_df)
     
     }
