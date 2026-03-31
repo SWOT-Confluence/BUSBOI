@@ -37,11 +37,6 @@ if(length(SCRIPT_DIR) == 0 || SCRIPT_DIR == "") {
     SCRIPT_DIR <- getwd()
 }
 
-# Read reaches from JSON file
-reach_json_path <- file.path(IN_DIR, opt$reachfile)
-if(!file.exists(reach_json_path)) {
-    stop(paste0("Reaches file not found: ", reach_json_path))
-}
 
 
 # ##for local testing-
@@ -58,6 +53,12 @@ source(file.path(SCRIPT_DIR, 'config.R'))
 # Print configuration if verbose
 if(VERBOSE) {
     print_config()
+}
+
+# Read reaches from JSON file
+reach_json_path <- file.path(IN_DIR, opt$reachfile)
+if(!file.exists(reach_json_path)) {
+    stop(paste0("Reaches file not found: ", reach_json_path))
 }
 
 # Source all BUSBOI functions
@@ -85,14 +86,13 @@ source(file.path(BUSBOI_DIR, 'write_output.R'))
 
 # 
 reaches <- fromJSON(reach_json_path)
+reach_id <- reaches$reach_id[[opt$index + 1]]  # R is 1-indexed
+cat(paste0("Processing reach [", opt$index, "]: ", reach_id, "\n"))
 
 
-# cat(paste0("Processing reach [", opt$index, "]: ", reach_id, "\n"))
-
-for (this_reach in reaches$reach_id){
 # Run BUSBOI with config parameters
 result <- main_function(
-    this_reach_id = this_reach,
+    this_reach_id = reach_id,
     swot_base = paste0(IN_DIR, "/swot/"),
     sos_base = paste0(IN_DIR, "/sos/"),
     sword_base = paste0(IN_DIR, "/sword/"),
@@ -102,6 +102,6 @@ result <- main_function(
     Q_prior = Q_PRIOR,
     tulip = TULIP
 )
-    }
+    
 
 cat("BUSBOI processing complete\n")

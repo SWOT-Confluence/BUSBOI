@@ -48,10 +48,10 @@ FIX_BED <- 0
 # OUT_DIR <- '/nas/cee-water/cjgleason/colin/Confluence_Offline/debug_testing/confluence_debug/debug_mnt/flpe/busboi/'
 
 # # Input directory (Confluence standard)
- IN_DIR <- "/mnt/input"
+ IN_DIR <- "/mnt/data/input"
 
 # # Output directory (Confluence standard)
- OUT_DIR <- "/mnt/flpe/busboi"
+ OUT_DIR <- "/mnt/data/output"
 
 # ==============================================================================
 # DATA FILE PATTERNS
@@ -93,27 +93,7 @@ SAVE_RDS <- TRUE
 # ==============================================================================
 
 #' Get configuration as a named list
-#' @return list of all configuration parameters
-get_config <- function() {
-  return(list(
-    Q_PRIOR = Q_PRIOR,
-    TULIP = TULIP,
-    GVF_ON = GVF_ON,
-    FIX_BED = FIX_BED,
-    IN_DIR = IN_DIR,
-    OUT_DIR = OUT_DIR,
-    SWOT_FILE_PATTERN = SWOT_FILE_PATTERN,
-    SOS_FILES = SOS_FILES,
-    SWORD_FILES = SWORD_FILES,
-    CONTINENT_MAP = CONTINENT_MAP,
-    NC_FILL_VALUE = NC_FILL_VALUE,
-    OUTPUT_FILE_SUFFIX = OUTPUT_FILE_SUFFIX,
-    Q_PRIOR_MIN_FACTOR = Q_PRIOR_MIN_FACTOR,
-    Q_PRIOR_MAX_FACTOR = Q_PRIOR_MAX_FACTOR,
-    VERBOSE = VERBOSE,
-    SAVE_RDS = SAVE_RDS
-  ))
-}
+
 
 #' Print current configuration
 print_config <- function() {

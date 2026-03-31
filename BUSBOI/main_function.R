@@ -100,6 +100,57 @@ main_function=function(this_reach_id,swot_base,sos_base,sword_base,output_path,f
                     tulip=tulip,
                    Q_priors=busboi_data_object$Qpriors)
 
+        #check for bounded hydrographs
+
+        finalQ=outputs$Q
+        upper=busboi_data_object$Qpriors$upperbound_Q
+        lower=busboi_data_object$Qpriors$lowerbound_Q
+        nt=busboi_data_object$priors$nt
+
+       #if   number of || within 10% of upper || greater than || 90% of data
+        if( sum(finalQ > (0.9*upper)) > 0.9*nt ){
+                  # No valid data to run - write invalid output
+                posteriors <- list(
+                    r = NA,
+                    bed = NA,
+                    prior_Q = NA,
+                    Q=NA,
+                    chainage=NA
+                )
+        
+                write_output(
+                    reach_id=this_reach_id,
+                    posteriors = posteriors,
+                    out_dir = output_path,
+                    is_valid = FALSE,
+                    obs_times = NA
+                ) 
+
+              return(NULL)
+              
+        
+        }
+        if( sum(finalQ > (0.9*upper)) > 0.9*nt ){
+                # No valid data to run - write invalid output
+                posteriors <- list(
+                    r = NA,
+                    bed = NA,
+                    prior_Q = NA,
+                    Q=NA,
+                    chainage=NA
+                )
+        
+                write_output(
+                    reach_id=this_reach_id,
+                    posteriors = posteriors,
+                    out_dir = output_path,
+                    is_valid = FALSE,
+                    obs_times = NA
+                ) 
+
+              return(NULL)
+        }
+
 
           # Prepare posteriors for NetCDF output
         posteriors <- list(
@@ -138,7 +189,7 @@ main_function=function(this_reach_id,swot_base,sos_base,sword_base,output_path,f
             reach_id=this_reach_id,
             posteriors = posteriors,
             out_dir = output_path,
-            is_valid = TRUE,
+            is_valid = FALSE,
             obs_times = NA
         )
 
