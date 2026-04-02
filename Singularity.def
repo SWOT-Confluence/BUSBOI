@@ -1,5 +1,5 @@
 Bootstrap: docker
-From: ghcr.io/cjgleason/busboi:latest
+From: ghcr.io/swot-confluence/busboi:latest
 
 %files
     BUSBOI/. /app/BUSBOI/
