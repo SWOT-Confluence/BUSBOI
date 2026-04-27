@@ -17,8 +17,8 @@ main_function=function(this_reach_id,swot_base,sos_base,sword_base,output_path,f
     continent_index <- c(
         '1' = 'af',
         '2' = 'eu',
-        '3' = 'sa',
-        '4' = 'sa',
+        '3' = 'as',
+        '4' = 'as',
         '5' = 'oc',
         '6' = 'sa',
         '7' = 'na',
@@ -164,13 +164,15 @@ main_function=function(this_reach_id,swot_base,sos_base,sword_base,output_path,f
 
   
  # Write NetCDF output
-        write_output(
-            reach_id=this_reach_id,
-            posteriors = posteriors,
-            out_dir = output_path,
-            is_valid = TRUE,
-            obs_times = as.character(as.Date(busboi_data_object$swot_data$obs_times))
-        )
+# --- valid result -------------------------------------------------------
+write_output(
+    reach_id  = this_reach_id,
+    posteriors = posteriors,
+    out_dir   = output_path,
+    is_valid  = TRUE,
+    obs_times = as.character(as.Date(busboi_data_object$swot_data$obs_times)),
+    swot_dir  = swot_base          # <-- added
+)
 
 
     } else { #no data to run
@@ -185,13 +187,14 @@ main_function=function(this_reach_id,swot_base,sos_base,sword_base,output_path,f
         )
 
 
-        write_output(
-            reach_id=this_reach_id,
-            posteriors = posteriors,
-            out_dir = output_path,
-            is_valid = FALSE,
-            obs_times = NA
-        )
+write_output(
+    reach_id  = this_reach_id,
+    posteriors = posteriors,
+    out_dir   = output_path,
+    is_valid  = FALSE,
+    obs_times = NA,
+    swot_dir  = swot_base          # <-- added
+)
 
 
     } #end if statment checking for good input
