@@ -44,8 +44,8 @@ locals {
   } : var.default_tags
 }
 
-module "confluence-neobam" {
-  source = "./modules/neobam"
+module "confluence-busboi" {
+  source = "./modules/busboi"
   app_name = var.app_name
   app_version = var.app_version
   aws_region = var.aws_region

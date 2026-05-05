@@ -1,15 +1,15 @@
 # Job Definition
-resource "aws_batch_job_definition" "generate_batch_jd_neobam" {
-  name = "${var.prefix}-neobam"
+resource "aws_batch_job_definition" "generate_batch_jd_busboi" {
+  name = "${var.prefix}-busboi"
   type = "container"
   platform_capabilities = ["FARGATE"]
   propagate_tags = true
   tags = {
-    job_definition = "${var.prefix}-neobam"
+    job_definition = "${var.prefix}-busboi"
   }
 
   container_properties = jsonencode({
-    image = "${local.account_id}.dkr.ecr.us-west-2.amazonaws.com/${var.prefix}-neobam:${var.image_tag}"
+    image = "${local.account_id}.dkr.ecr.us-west-2.amazonaws.com/${var.prefix}-busboi:${var.image_tag}"
     executionRoleArn = var.iam_execution_role_arn
     jobRoleArn = var.iam_job_role_arn
     fargatePlatformConfiguration = {
@@ -55,5 +55,5 @@ resource "aws_batch_job_definition" "generate_batch_jd_neobam" {
 
 # Log group
 resource "aws_cloudwatch_log_group" "cw_log_group" {
-  name = "/aws/batch/job/${var.prefix}-neobam/"
+  name = "/aws/batch/job/${var.prefix}-busboi/"
 }
