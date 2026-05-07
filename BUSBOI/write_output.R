@@ -90,7 +90,7 @@ pad_to_full_time = function(values, obs_indices, nt_length) {
 #' @param out_data   metadata including dimensions
 write_posteriors = function(nc_out, posteriors, is_valid, out_data) {
 
-  # Manning's roughness coefficient (r) - scalar, dimensionless
+  # Channel shape (r) - scalar, dimensionless
   r = tryCatch(
     error = function(cond) grp.def.nc(nc_out, "r"),
     grp.inq.nc(nc_out, "r")$self
