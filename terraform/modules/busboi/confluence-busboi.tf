@@ -47,7 +47,7 @@ resource "aws_batch_job_definition" "generate_batch_jd_busboi" {
       name = "flpe"
       efsVolumeConfiguration = {
         fileSystemId = var.efs_file_system_ids["flpe"]
-        rootDirectory = "/geobam"
+        rootDirectory = "/busboi"
       }
     }]
   })
