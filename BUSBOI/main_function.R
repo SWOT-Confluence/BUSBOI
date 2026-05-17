@@ -123,12 +123,13 @@ main_function=function(this_reach_id,swot_base,sos_base,sword_base,output_path,f
                     posteriors = posteriors,
                     out_dir = output_path,
                     is_valid = FALSE,
-                    obs_times = NA
-                ) 
+                    obs_times = NA,
+                    swot_dir  = swot_base
+                )
 
               return(NULL)
-              
-        
+
+
         }
         if( sum(finalQ > (0.9*upper)) > 0.9*nt ){
                 # No valid data to run - write invalid output
@@ -139,14 +140,15 @@ main_function=function(this_reach_id,swot_base,sos_base,sword_base,output_path,f
                     Q=NA,
                     chainage=NA
                 )
-        
+
                 write_output(
                     reach_id=this_reach_id,
                     posteriors = posteriors,
                     out_dir = output_path,
                     is_valid = FALSE,
-                    obs_times = NA
-                ) 
+                    obs_times = NA,
+                    swot_dir  = swot_base
+                )
 
               return(NULL)
         }
