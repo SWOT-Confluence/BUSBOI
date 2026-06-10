@@ -328,11 +328,12 @@ for (i in 1:length(global_Q)){
     
 
     #change to df to make output simpler
-    final_output_df=list(r=global_r,
-                               Q=allQ,
-                               bed=global_bed,
-                               chainage=sample_x)
-
+final_output_df=list(r=global_r,
+                     Q=allQ,
+                     bed=global_bed,
+                     chainage=sample_x,
+                     db=mean(priors$Db_hat),
+                     wb=mean(priors$Wb_hat))
     return(final_output_df)
     
     }
