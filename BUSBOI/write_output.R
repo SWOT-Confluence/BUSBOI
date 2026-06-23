@@ -90,18 +90,33 @@ pad_to_full_time = function(values, obs_indices, nt_length) {
 #' @param out_data   metadata including dimensions
 write_posteriors = function(nc_out, posteriors, is_valid, out_data) {
 
-  # Channel shape (r) - scalar, dimensionless
+  # Channel shape (r), bankfull depth (db), bankfull width (wb) - all scalars
   r = tryCatch(
     error = function(cond) grp.def.nc(nc_out, "r"),
     grp.inq.nc(nc_out, "r")$self
   )
+
   var.def.nc(r, "mean", "NC_DOUBLE", NA)
   att.put.nc(r, "mean", "_FillValue", "NC_DOUBLE", FILL)
 
+  var.def.nc(r, "db", "NC_DOUBLE", NA)
+  att.put.nc(r, "db", "_FillValue", "NC_DOUBLE", FILL)
+  att.put.nc(r, "db", "long_name",  "NC_STRING",  "bankfull_depth_prior")
+  att.put.nc(r, "db", "units",      "NC_STRING",  "meters")
+
+  var.def.nc(r, "wb", "NC_DOUBLE", NA)
+  att.put.nc(r, "wb", "_FillValue", "NC_DOUBLE", FILL)
+  att.put.nc(r, "wb", "long_name",  "NC_STRING",  "bankfull_width_prior")
+  att.put.nc(r, "wb", "units",      "NC_STRING",  "meters")
+
   if (is_valid) {
     var.put.nc(r, "mean", posteriors$r)
+    var.put.nc(r, "db",   posteriors$db)
+    var.put.nc(r, "wb",   posteriors$wb)
   } else {
     var.put.nc(r, "mean", FILL)
+    var.put.nc(r, "db",   FILL)
+    var.put.nc(r, "wb",   FILL)
   }
 
   # Bed elevations and chainage (nx values from bed elevation vector)

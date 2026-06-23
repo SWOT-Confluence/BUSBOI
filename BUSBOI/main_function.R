@@ -110,13 +110,15 @@ main_function=function(this_reach_id,swot_base,sos_base,sword_base,output_path,f
        #if   number of || within 10% of upper || greater than || 90% of data
         if( sum(finalQ > (0.9*upper)) > 0.9*nt ){
                   # No valid data to run - write invalid output
-                posteriors <- list(
-                    r = NA,
-                    bed = NA,
-                    prior_Q = NA,
-                    Q=NA,
-                    chainage=NA
-                )
+                  posteriors <- list(
+                      r        = NA,
+                      bed      = NA,
+                      prior_Q  = NA,
+                      Q        = NA,
+                      chainage = NA,
+                      db       = NA,
+                      wb       = NA
+                  )
         
                 write_output(
                     reach_id=this_reach_id,
@@ -133,13 +135,15 @@ main_function=function(this_reach_id,swot_base,sos_base,sword_base,output_path,f
         }
         if( sum(finalQ > (0.9*upper)) > 0.9*nt ){
                 # No valid data to run - write invalid output
-                posteriors <- list(
-                    r = NA,
-                    bed = NA,
-                    prior_Q = NA,
-                    Q=NA,
-                    chainage=NA
-                )
+       posteriors <- list(
+           r        = NA,
+           bed      = NA,
+           prior_Q  = NA,
+           Q        = NA,
+           chainage = NA,
+           db       = NA,
+           wb       = NA
+       )
 
                 write_output(
                     reach_id=this_reach_id,
@@ -155,13 +159,15 @@ main_function=function(this_reach_id,swot_base,sos_base,sword_base,output_path,f
 
 
           # Prepare posteriors for NetCDF output
-        posteriors <- list(
-            r = outputs$r,
-            bed = outputs$bed,
-            prior_Q = busboi_data_object$Qpriors$Q_hat,
-            Q=outputs$Q,
-            chainage=outputs$chainage
-        )
+posteriors <- list(
+    r        = outputs$r,
+    bed      = outputs$bed,
+    prior_Q  = busboi_data_object$Qpriors$Q_hat,
+    Q        = outputs$Q,
+    chainage = outputs$chainage,
+    db       = outputs$db,
+    wb       = outputs$wb
+)
 
 
   
@@ -179,15 +185,16 @@ write_output(
 
     } else { #no data to run
 
-     # No valid data to run - write invalid output
-        posteriors <- list(
-            r = NA,
-            bed = NA,
-            prior_Q = NA,
-            Q=NA,
-            chainage=NA
-        )
 
+posteriors <- list(
+    r        = NA,
+    bed      = NA,
+    prior_Q  = NA,
+    Q        = NA,
+    chainage = NA,
+    db       = NA,
+    wb       = NA
+)
 
 write_output(
     reach_id  = this_reach_id,
