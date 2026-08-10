@@ -11,7 +11,9 @@ jeff_calcHgivenparams_bedonly= function(variables,
                           H_DS_init,
                           fix_bed,
                                tulip){
-    
+
+
+
 
     #height as fit to the obs
     Hobs=hyperparams$Hobs #nx by nt
@@ -113,6 +115,30 @@ jeff_calcHgivenparams_bedonly= function(variables,
         H_est=((a*b*c*d*e*f)^exponent)+Zo_mat
         H_est[is.infinite(H_est)]=NA
         H_est[H_est=='NaN']=NA
+
+          #this just makes plots so we can do science diagnosis---------
+         if(plot_switch==1){
+
+         
+            plotlist=list()
+            sequence=floor(seq(from=1,to=nt,length.out=15))
+            count=0
+            for (index in sequence){
+                count=count+1
+    
+                         plotter=data.frame(SWOT=Hobs[,index],Estimated=H_est[,index],
+                                   Zo_ds=Zo_ds,new_x=new_x)%>%
+                    gather(source,height,-new_x)
+                      
+               
+                plotlist[[count]]=plotter
+           
+          }
+            
+           #returns this plot list
+        return(plotlist)
+
+             }
 
     #regardless of whether we have a free fit or a GVF fit, there are not always
     #hobs for all x. Since GVF needs to fit from downstream to upstream, we need
@@ -223,51 +249,10 @@ jeff_calcHgivenparams_bedonly= function(variables,
     #joint error- not for bed only
     objective= H_tulip #+Q_tulip  #+ Sf_tulip 
 
-    # objective= - objective
-       #iuf plot switch is 2, we return the bias
-    if (plot_switch ==2){
 
-    
-       return(mean(Hobs,na.rm=TRUE)-mean(H_est,na.rm=TRUE))
-           
-        }
 
-    #this just makes plots so we can do science diagnosis
+
  
-        if(plot_switch==1){
-
-         
-            
-            plotlist=list()
-            sequence=floor(seq(from=1,to=nt,length.out=15))
-            count=0
-            for (index in sequence){
-                count=count+1
-    
-                         plotter=data.frame(SWOT=Hobs[,index],Estimated=H_est[,index],
-                                   Zo_ds=Zo_ds,new_x=new_x)%>%
-                    gather(source,height,-new_x)
-                        
-               p1= ggplot(plotter)+
-                   geom_point(aes(x=new_x,y=height,col=source))+
-                    scale_color_manual(values=c('magenta','blue','red'))+
-              
-                     annotate('text',x=min(new_x,na.rm=TRUE),y=(0.98*max(Hobs[,index],na.rm=TRUE)),
-                             label=paste("obj. error=",round(objective,digits=2),"m"),hjust=0)+
-    
-                    annotate('text',x=min(new_x,na.rm=TRUE),y=(1.01*max(Hobs[,index],na.rm=TRUE)),
-                             label=paste("Q est.=",round(Q_est[index],digits=2),"m3/s"),hjust=0)
-    
-    
-               
-                plotlist[[count]]=plotter
-           
-          }
-            
-           
-        return(plotlist)
-    
-            } #end plotswitch
 
 return(objective)
 }#end function

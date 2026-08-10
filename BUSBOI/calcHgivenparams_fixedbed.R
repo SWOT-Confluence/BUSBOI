@@ -106,65 +106,9 @@ jeff_calcHgivenparams_fixedbed= function(variables,
         H_est[is.infinite(H_est)]=NA
         H_est[H_est=='NaN']=NA
 
-    #regardless of whether we have a free fit or a GVF fit, there are not always
-    #hobs for all x. Since GVF needs to fit from downstream to upstream, we need
-    #the starting node with data to be aware of 1) what the first point with data is
-    #and 2) what the domain for the fit is.
-
-    #since the error can be caluculated in the presence of NAs, the net effect is that
-    #gvf will solve for the starting node and then continue to the end, regardless
-    #of whether or not there is an observation there for error calculation
-
-    #we have returned to the problem of the station vector that is not constant.
-
-    #to solve this, we could make a concatentated pairwise column matrix where
-    #each timestep (column) of Hobs has a 1:1 relationship between HObs and x. BUT~~~~
-    #~~~~~~ that won't work, because we're trying to solve for a 5-point bed that covers the
-    #entire chainage length.  so, we need a solution for when we want GVF that finds the first
-    #value of x with H and then only estimates after that
-
-    #then, there is a second GVF problem in that we want to be able to let the DS
-    #coundary condition freesolve sometimes.
-
-    H_DS_init='free'
-    if(GVF_on==1){
-        #given this bed (Zo_ds), chainage (new_x), and Q (Q_est), caclulate a
-        #height profile from the most downstream node 
-            paramsODE=list()
-            paramsODE$r=r
-            paramsODE$n=n
-            paramsODE$wb=wb
-            paramsODE$db=db
-            paramsODE$So=So
-            #loop over all the columns to solve at each time t with the same bed and that times
-            #qestimate
-            solved_ode=list()
-        
-
-                stations = new_x #chainage for the other heights  
-                paramsODE$timeindex=i
-                paramsODE$all_stations=new_x
-                paramsODE$Q_est=Q_est
-                paramsODE$Zo_ds=Zo_ds
-
-            #free fit, use the Q-estimated height
-                    H_init=H_est[1,i]
-                
-
-                solved_ode= ode(y=H_init, times=stations, func=GVF,
-                                     parms=paramsODE,method='ode45')  
-
-             # where the first column is labelled 'time' but is really station
-            # the second coumn is water surface elevation
- 
-        H_est=unname(as.matrix(H_temp[,2:ncol(H_temp)]))
-       } #end GVF ON------------------------------------------
+  
 
     #caculalte the error of the objective function
-
-   
-  
-     
         H_tulip=jeff_tulip(H_est=H_est,
                            #need only this time
                            Hobs=Hobs[,index],
@@ -175,48 +119,10 @@ jeff_calcHgivenparams_fixedbed= function(variables,
 
 
 
-    #joint error
+    #joint error- Q and SF penalties are set to 0, making this unecessary
     objective= Sfpenalty + Qpenalty + H_tulip #+ Sf_tulip +#= Sfpenalty 
 
 
-  
-    #if plot switch is 2, we return the bias
-    if (plot_switch ==2){
-
-       return(mean(Hobs,na.rm=TRUE)-mean(H_est,na.rm=TRUE))
-           
-        }
-
-    #this just makes plots so we can do science diagnosis
-        if(plot_switch==1){
-
-         
-            
- 
-                plotter=data.frame(SWOT=Hobs[,index],Estimated=H_est,
-                                   Zo_ds=Zo_ds,new_x=new_x)%>%
-                    gather(source,height,-new_x)
-                        
-               p1= ggplot(plotter)+
-                   geom_point(aes(x=new_x,y=height,col=source))+
-                    scale_color_manual(values=c('magenta','blue','red'))+
-              
-                     annotate('text',x=min(new_x,na.rm=TRUE),y=(0.98*max(Hobs[,index],na.rm=TRUE)),
-                             label=paste("obj. error=",round(objective,digits=2),"m"),hjust=0)+
-    
-                    annotate('text',x=min(new_x,na.rm=TRUE),y=(1.01*max(Hobs[,index],na.rm=TRUE)),
-                             label=paste("Q est.=",round(Q_est[index],digits=2),"m3/s"),hjust=0)
-    
-    
-               
-    
-  
-           
-              print(p1)
-            
-            bonk #will kill the code!
-    
-            } #end plotswitch
 
 return(objective)
 }#end function

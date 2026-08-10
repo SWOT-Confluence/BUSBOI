@@ -1,4 +1,4 @@
-calc_newH=function(height_in,chainage,num_nodes_to_invert){
+calc_newH=function(height_in,chainage,num_nodes_to_invert, reach_id_in=NA, obs_date=NA){
 
     #mini function
     calc_newSf=function(height_in,chainage){
@@ -127,34 +127,36 @@ calc_newH=function(height_in,chainage,num_nodes_to_invert){
 
 #     ##toggle this on to check the plots
 
-# library(ggplot2)
+    library(ggplot2)
 
-# plotter = bind_rows(
-#     data.frame(x = ogx,   y = ogy,    source = 'Observed'),
-#     data.frame(x = new_x,  y = new_H,  source = 'Spline')
-#     # data.frame(x = new_x2, y = new_H2, source = 'Spline 2')
-# )
 
-# p13 = ggplot(plotter) +
-#     geom_point(aes(x = x, y = y, color = source), shape = 16, size = 4) +
-# scale_color_manual(values = c('Observed' = '#888888',   # grey
-#                               'Spline' = 'black'))+  # mauve/pink
-#                               # 'Spline 2' = 'black'))+
-#     labs(x = 'Chainage (m)', y = 'WSE (m)', color = NULL) +
-#     theme_bw() +
-#     theme(
-#         axis.text             = element_text(size = 18),
-#         axis.title            = element_text(size = 16),
-#         legend.position       = c(0.15, 0.82),
-#         legend.background     = element_rect(fill = "white", color = "grey80"),
-#         legend.margin         = margin(8, 16, 8, 16),
-#         legend.key.size       = unit(1.2, 'lines'),
-#         legend.text           = element_text(size = 16)  )
+plotter = bind_rows(
+    data.frame(x = ogx,  y = ogy,   source = 'SWOT WSE'),
+    data.frame(x = new_x, y = new_H, source = 'Filtered SWOT WSE')
+)
+
+p13 = ggplot(plotter) +
+    geom_point(aes(x = x, y = y, color = source), shape = 16, size = 4) +
+    scale_color_manual(values = c('SWOT WSE'          = '#888888',
+                                  'Filtered SWOT WSE' = 'black')) +
+    labs(x = 'Chainage (m)', y = 'WSE (m)', color = NULL,
+         title = reach_id_in) +
+    theme_bw() +
+    theme(
+        axis.text        = element_text(size = 18),
+        axis.title       = element_text(size = 16),
+        plot.title       = element_text(size = 16, hjust = 0.5),
+        legend.position  = c(0.3, 0.82),
+        legend.background = element_rect(fill = "white", color = "grey80"),
+        legend.margin    = margin(8, 16, 8, 16),
+        legend.key.size  = unit(1.2, 'lines'),
+        legend.text      = element_text(size = 16)
+    )
+
     
-
-    
-
-
+ggsave(paste0('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/Figures/', reach_id_in, '_spline.png'),
+       p13, width = 8, height = 8, units = "in", dpi = 150)
+bonk
  
 
     

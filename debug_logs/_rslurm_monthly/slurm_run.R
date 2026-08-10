@@ -10,8 +10,15 @@ library(dplyr, quietly = TRUE)
 library(parallel, quietly = TRUE)
 library(ggplot2, quietly = TRUE)
 library(tidyr, quietly = TRUE)
+library(jsonlite, quietly = TRUE)
 library(zoo, quietly = TRUE)
 library(hydroGOF, quietly = TRUE)
+library(RNetCDF, quietly = TRUE)
+library(optimx, quietly = TRUE)
+library(deSolve, quietly = TRUE)
+library(optparse, quietly = TRUE)
+library(purrr, quietly = TRUE)
+library(geosphere, quietly = TRUE)
 library(rslurm, quietly = TRUE)
 library(whisker, quietly = TRUE)
 
@@ -20,8 +27,8 @@ library(whisker, quietly = TRUE)
 .rslurm_x <- readRDS('x.RDS')
 .rslurm_more_args <- readRDS('more_args.RDS')
 .rslurm_id <- as.numeric(Sys.getenv('SLURM_ARRAY_TASK_ID'))
-.rslurm_istart <- .rslurm_id * 2154 + 1
-.rslurm_iend <- min((.rslurm_id + 1) * 2154, length(.rslurm_x))
+.rslurm_istart <- .rslurm_id * 2194 + 1
+.rslurm_iend <- min((.rslurm_id + 1) * 2194, length(.rslurm_x))
 .rslurm_result <- do.call(parallel::mclapply, c(list(
     X = .rslurm_x[.rslurm_istart:.rslurm_iend],
     FUN = .rslurm_func),

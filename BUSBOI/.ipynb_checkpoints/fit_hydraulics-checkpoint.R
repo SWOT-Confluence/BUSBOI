@@ -90,9 +90,10 @@ if(typeof(station_df)=='character'){return('no good')}
    if(ncol(Hobs)<num_times_to_invert){return('no good')}
    if(nrow(Hobs)<num_nodes_to_invert){return('no good')}
 
+
     #make an n-node spline
     newHX=apply(Hobs,2,calc_newH,num_nodes_to_invert=num_nodes_to_invert,
-                     chainage=chainage)
+                     chainage=chainage,reach_id=reach_id_in,obs_date=names(Hobs))
 
     #sometimes none pass the spline-ing
     suppressWarnings({

@@ -1,7 +1,30 @@
 main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_on,Q_prior,tulip){
  
     # Source the output writer
-    source(file.path(dirname(sys.frame(1)$ofile), 'output.R'))
+    # source(file.path(dirname(sys.frame(1)$ofile), 'output.R'))
+
+    BUSBOI_DIR='/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/'
+
+    # Source all BUSBOI functions
+source(paste0(BUSBOI_DIR, 'input.R'))
+source(paste0(BUSBOI_DIR, 'jeff_tulip.R'))
+source(paste0(BUSBOI_DIR, 'calcHgivenparams_fixedbed.R'))
+source(paste0(BUSBOI_DIR, 'calcHgivenparams_bedonly.R'))
+source(paste0(BUSBOI_DIR, 'GVF.R'))
+source(paste0(BUSBOI_DIR, 'calculate_cum_dist.R'))
+source(paste0(BUSBOI_DIR, 'calc_Sf_newH.R'))
+source(paste0(BUSBOI_DIR, 'calculate_spline.R'))
+source(paste0(BUSBOI_DIR, 'fit_hydraulics.R'))
+source(paste0(BUSBOI_DIR, 'get_Q_prior.R'))
+source(paste0(BUSBOI_DIR, 'rejection_sample.R'))
+source(paste0(BUSBOI_DIR, 'Jeff_solver_bedthenQ.R'))
+source(paste0(BUSBOI_DIR, 'read_LSTM_ensemble.R'))
+source(paste0(BUSBOI_DIR, 'run_BUSBOI.R'))
+source(paste0(BUSBOI_DIR, 'Slope_empirical.R'))
+source(paste0(BUSBOI_DIR, 'main_function.R'))
+
+
+source('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/config.R')
     
   # Construct file paths from base directories
     swot_file <- paste0(swot_base, this_reach_id, '_SWOT.nc')
@@ -19,7 +42,7 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
                      'as_sword_v17b_SOS_priors.nc'))
 
     # SWORD files - now read from input directory
-    swordpaths <- paste0(sword_base,
+    swordpaths <- paste0(sos_base,
                         c('eu_sword_v17b.nc',
                           'na_sword_v17b.nc',
                           'sa_sword_v17b.nc',
@@ -47,13 +70,13 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
                               sos_file=sos_file, 
                               reach_id_in=this_reach_id)
 
-    # Prepare metadata for output
-    out_data <- list(
-        reach_id = this_reach_id,
-        node_ids = busboi_data_object$node_ids,  # Get from input if available
-        nt = seq(1, length(busboi_data_object$swot_data$obs_times)),
-        invalid_times = c()  # Track invalid times if needed
-    )
+    # # Prepare metadata for output
+    # out_data <- list(
+    #     reach_id = this_reach_id,
+    #     node_ids = busboi_data_object$node_ids,  # Get from input if available
+    #     nt = seq(1, length(busboi_data_object$swot_data$obs_times)),
+    #     invalid_times = c()  # Track invalid times if needed
+    # )
     
     #if we have something to run on 
     if(busboi_data_object$valid==TRUE){
@@ -73,7 +96,8 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
 
                     ML_Qt=ML_Qt%>%
                         distinct()
-        
+
+                  
                 swot_dates=data.frame(date=as.Date(busboi_data_object$swot_data$obs_times))
         
                 #left joining gives us a vector of exactly the right size
@@ -106,73 +130,68 @@ main_function=function(this_reach_id,swot_base,sos_base,output_path,fix_bed,GVF_
                     tulip=tulip,
                    Q_priors=busboi_data_object$Qpriors)
 
-          # Prepare posteriors for NetCDF output
-        posteriors <- list(
-            r = outputs$posterior_r,
-            r_sd = sd(outputs$posterior_r, na.rm = TRUE),  # Calculate if not provided
-            bed = outputs$posterior_bed,
-            prior_Q = busboi_data_object$Qpriors$Q_hat
-        )
+
+        # print(outputs)
+        finalQ=outputs$posterior_Q
+        #if 90% or more are at one boudn or the other, reject
+        
+        upper=busboi_data_object$Qpriors$upperbound_Q
+        lower=busboi_data_object$Qpriors$lowerbound_Q
+        nt=busboi_data_object$priors$nt
+
+       #if   number of || within 10% of upper || greater than || 90% of data
+        if( sum(finalQ > (0.9*upper)) > 0.9*nt ){
+                    BUSBOI_df=data.frame(busboi_Q=NA,
+                             date=NA,
+                             reach_id=this_reach_id,
+                             prior_Q=NA,
+                             r=NA,
+                             bed=NA)
+        #toggle this saveRDS on for local work, otherwise use the 'output' function
+        saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
+            return(NULL)
+        
+        }
+        if( sum(finalQ > (0.9*upper)) > 0.9*nt ){
+        BUSBOI_df=data.frame(busboi_Q=NA,
+                             date=NA,
+                             reach_id=this_reach_id,
+                             prior_Q=NA,
+                             r=NA,
+                             bed=NA)
+        #toggle this saveRDS on for local work, otherwise use the 'output' function
+        saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
+            return(NULL)
+            }
+
+
 
         # #format the output
-        # BUSBOI_df=data.frame(BUSBOI_Q=outputs$posterior_Q,
-        #               date=as.Date(busboi_data_object$swot_data$obs_times),
-        #               reach_id=this_reach_id,
-        #               r=outputs$posterior_r,
-        #               bed=paste(outputs$posterior_bed,collapse=','),
-        #               prior_Q=busboi_data_object$Qpriors$Q_hat)
+        BUSBOI_df=data.frame(BUSBOI_Q=outputs$posterior_Q,
+                      date=as.Date(busboi_data_object$swot_data$obs_times),
+                      reach_id=this_reach_id,
+                      r=outputs$posterior_r,
+                      bed=paste(outputs$posterior_bed,collapse=','),
+                      prior_Q=busboi_data_object$Qpriors$Q_hat)
 
         #toggle this saveRDS on for local work, otherwise use the 'output' function
-        # saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
+        saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
 
-            # Calculate discharge uncertainty if available
-        discharge_sd <- if(!is.null(outputs$posterior_Qsd)) {
-            outputs$posterior_Qsd
-        } else {
-            sd(outputs$posterior_Q, na.rm = TRUE)
-        }
-        
- # Write NetCDF output
-        write_output(
-            data = out_data,
-            posteriors = posteriors,
-            discharge = outputs$posterior_Q,
-            discharge_sd = discharge_sd,
-            out_dir = output_path,
-            is_valid = TRUE,
-            obs_times = as.character(as.Date(busboi_data_object$swot_data$obs_times))
-        )
 
 
     } else { #no data to run
 
-     # No valid data to run - write invalid output
-        posteriors <- list(
-            r = NA,
-            r_sd = NA,
-            bed = NA,
-            prior_Q = NA
-        )
 
-        write_output(
-            data = out_data,
-            posteriors = posteriors,
-            discharge = NA,
-            discharge_sd = NA,
-            out_dir = output_path,
-            is_valid = FALSE,
-            obs_times = NA
-        )
-        # BUSBOI_df=data.frame(busboi_Q=NA,
-        #                      date=NA,
-        #                      reach_id=this_reach_id,
-        #                      prior_Q=NA,
-        #                      r=NA,
-        #                      bed=NA)
-        # #toggle this saveRDS on for local work, otherwise use the 'output' function
-        # saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
+        BUSBOI_df=data.frame(busboi_Q=NA,
+                             date=NA,
+                             reach_id=this_reach_id,
+                             prior_Q=NA,
+                             r=NA,
+                             bed=NA)
+        #toggle this saveRDS on for local work, otherwise use the 'output' function
+        saveRDS(BUSBOI_df,paste0(output_path,this_reach_id,'BUSBOIQ.rds'))
 
-     # return(BUSBOI_df)
+  
 
     } #end if statment checking for good input
 }#end main

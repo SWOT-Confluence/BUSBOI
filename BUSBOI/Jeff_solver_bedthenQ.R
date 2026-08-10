@@ -156,27 +156,7 @@ jeff_solver_bedthenQ=function(this_reach_id,priors,data,Q_priors,fix_bed,GVF_on,
         GVF_on=GVF_on # set to 1 to force a full-froude GVF
         H_DS_init='free' # set to'fixed' to always use the most ds swot obs
 
-# debugging toggle to visualize initial bed.
- # plot_initial_channel= jeff_calcHgivenparams_bedonly(variables=pars,
- #                     hyperparams=hyperparams,
- #                    plot_switch=1,
- #                    this_reach_id=this_reach_id,
- #                    obj_error=obj_error,
- #                    replacement_error=replacement_error,
- #                    smooth_sf=smooth_sf,
- #                    Qpenalty=Qpenalty,
- #                    Sfpenalty=Sfpenalty,
- #                    GVF_on=GVF_on,
- #                    H_DS_init=H_DS_init,
- #                    fix_bed=fix_bed,
- #                        tulip=tulip)
 
- #    saveRDS(plot_initial_channel,paste0('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/channel_examples/',
- #                                        this_reach_id,'initial_channel.rds'))
-
- #        bonk
-    
-    #solve
 
 
 #solve for an R and bed    
@@ -203,24 +183,27 @@ jeff_solver_bedthenQ=function(this_reach_id,priors,data,Q_priors,fix_bed,GVF_on,
     # browser()
 
 #  ##debugging toggle
-# jeff_calcHgivenparams_bedonly(variables=optparams$par,
-#                   hyperparams=hyperparams,
-#                  plot_switch=1,
-#                  this_reach_id=this_reach_id,
-#                  obj_error=obj_error,
-#                  replacement_error=replacement_error,
-#                  smooth_sf=smooth_sf,
-#                  Qpenalty=Qpenalty,
-#                  Sfpenalty=Sfpenalty,
-#                  GVF_on=GVF_on,
-#                  H_DS_init=H_DS_init,
-#                  fix_bed=fix_bed,
-#                      tulip=tulip)
+
+    # debugging toggle to visualize initial bed.-----------------------------
+initial_plots=jeff_calcHgivenparams_bedonly(variables=pars,
+                  hyperparams=hyperparams,
+                 plot_switch=1,
+                 this_reach_id=this_reach_id,
+                 obj_error=obj_error,
+                 replacement_error=replacement_error,
+                 smooth_sf=smooth_sf,
+                 Qpenalty=Qpenalty,
+                 Sfpenalty=Sfpenalty,
+                 GVF_on=GVF_on,
+                 H_DS_init=H_DS_init,
+                 fix_bed=fix_bed,
+                     tulip=tulip)
 
 
-#      bonk
+saveRDS(initial_plots,paste0('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/channel_examples/',
+                                        this_reach_id,'initial_channel.rds'))
 
-
+#------------------------------------------------------------------------------------
     #OK!!! following meeting with Kostas on 2/27, let's do a two step solution. So we just optimized a bed and Q
     #that minimizes errors in water levels. However, if you look at the surfces, it is clear that the Q could be refined
     #to better move the surfaces. so, we need to optimize again, this time AT EACH TIME INDPENDENTLY, given the bed
@@ -303,29 +286,82 @@ for (i in 1:length(global_Q)){
 }
    
 
+
     
     final_pars=c(global_r,allQ,global_bed)
 
-     ##debugging toggle
-plot_final_channel=jeff_calcHgivenparams(variables=final_pars,
-                  hyperparams=hyperparams,
-                 plot_switch=1,
-                 this_reach_id=this_reach_id,
-                 obj_error=obj_error,
-                 replacement_error=replacement_error,
-                 smooth_sf=smooth_sf,
-                 Qpenalty=Qpenalty,
-                 Sfpenalty=Sfpenalty,
-                 GVF_on=GVF_on,
-                 H_DS_init=H_DS_init,
-                 fix_bed=fix_bed,
-                     tulip=tulip)
 
-        saveRDS(plot_final_channel,paste0('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/channel_examples/',
-                                        this_reach_id,'final_channel.rds'))
+    #plot final channel
+    Hobs=hyperparams$Hobs
+    db=hyperparams$db
+    wb=hyperparams$wb
+    n=hyperparams$n
+    r=global_r
+    sample_Zo=global_bed
+    Q_est=allQ
 
+    nx=nrow(Hobs)
+    nt=ncol(Hobs)
+  #re interp the bed  
+ Zo_ds=approx(sample_x,sample_Zo ,xout=new_x ,method = "linear")$y
     
+ Sf=apply(Hobs,2,Slope_empirical,chainage=new_x)
+      #this comes out as one element shorter than the original one
+       #handle zeroes
+    Sf[Sf==0]=1e-6
 
+    #smooth that Sf
+    if(smooth_sf==1){
+        Sf_smooth=mean(Sf,na.rm=TRUE)
+        }
+    else{
+        Sf_smooth=Sf
+    }
+
+    #excepton handle
+    Sf_smooth[Sf_smooth=='NaN']=NA
+
+    #set an adverse slope penalty
+    #usually 0, but capability is here
+    if(any(Sf_smooth<0,na.rm=TRUE)){
+         Sf_smooth[Sf_smooth<0]=1e-6
+     }
+    
+     #we need an H estimate that is a function of Q
+        Zo_mat=matrix(rep(Zo_ds,times=nt),nrow=nx,ncol=nt)
+        Q_mat=matrix(rep(Q_est,times=nx),nrow=nx,ncol=nt,byrow=TRUE)
+    
+        exponent=1/(1.66+(1/r))
+        a=Q_mat
+        b=(Sf_smooth)^-0.5
+        c=db^(1/r)
+        d=n
+        e=wb^-1
+        f=(r/(r+1))^(-5/3) 
+       
+        H_est=((a*b*c*d*e*f)^exponent)+Zo_mat
+        H_est[is.infinite(H_est)]=NA
+        H_est[H_est=='NaN']=NA
+
+            plotlist=list()
+            sequence=floor(seq(from=1,to=nt,length.out=15))
+            count=0
+            for (index in sequence){
+                count=count+1
+    
+                         plotter=data.frame(SWOT=Hobs[,index],Estimated=H_est[,index],
+                                   Zo_ds=Zo_ds,new_x=new_x)%>%
+                    gather(source,height,-new_x)
+                        
+ 
+               
+                plotlist[[count]]=plotter
+           }#end loop
+        
+
+
+        saveRDS(plotlist,paste0('/nas/cee-water/cjgleason/colin/BUSBOI/BUSBOI/channel_examples/',
+                                        this_reach_id,'final_channel.rds'))
 
 
     #the par variable is of the form (r, Q, Zo). Dimensions vary with hyperparameters

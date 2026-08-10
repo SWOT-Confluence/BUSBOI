@@ -49,6 +49,8 @@ jeff_tulip=function(H_est,Hobs,nx,errortype,
          objective_m= sqrt(mean(E2,na.rm=TRUE))
         }
 
+    #sometimes the objective is inf or NA
+    
 
     return(objective_m)
     

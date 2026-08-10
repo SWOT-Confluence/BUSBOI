@@ -1,5 +1,6 @@
 
-run_BUSBOI = function(reach_id,priors, data,Q_priors, fix_bed,GVF_on,tulip) {
+ run_BUSBOI = function(reach_id,priors, data,Q_priors, fix_bed,GVF_on,tulip) {
+
 
     #solve for Q
     optimal_hydrograph=jeff_solver_bedthenQ(this_reach_id=reach_id,
@@ -10,6 +11,8 @@ run_BUSBOI = function(reach_id,priors, data,Q_priors, fix_bed,GVF_on,tulip) {
                                    GVF_on=GVF_on,
                                    tulip=tulip)
 
+
+   
     nt=priors$nt
     #structure is 
     #first position: r
@@ -28,8 +31,9 @@ run_BUSBOI = function(reach_id,priors, data,Q_priors, fix_bed,GVF_on,tulip) {
                'posterior_r'=posterior_r,
                 'posterior_bed'=posterior_bed)
 
+
     return(output)
 
-  }
-
+  # }
+}
 
